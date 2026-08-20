@@ -403,3 +403,222 @@ footer.page-footer a:hover{ color:var(--accent); }
   html{ scroll-behavior:auto; }
   *{ transition:none !important; }
 }
+
+/* ==========================================================================
+   Page Accueil — refonte "carte de profil"
+   ========================================================================== */
+
+body.home{
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(63,107,82,.07), transparent 45%),
+    radial-gradient(ellipse at 90% 100%, rgba(193,68,14,.05), transparent 45%),
+    #F7F4EA;
+}
+
+.home-shell{
+  position:relative; z-index:1;
+  max-width:1180px;
+  margin:0 auto;
+  padding:var(--gutter);
+  display:grid;
+  grid-template-columns:84px 1fr;
+  gap:var(--gutter);
+  align-items:start;
+}
+
+/* ---- Rail de navigation à icônes ---- */
+
+.icon-rail{
+  position:sticky; top:var(--gutter);
+  background:var(--paper-deep);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:1.4rem .5rem;
+  display:flex; flex-direction:column;
+  align-items:center;
+  gap:.4rem;
+}
+.rail-item{
+  width:100%;
+  display:flex; flex-direction:column; align-items:center; gap:.35rem;
+  padding:.7rem .3rem;
+  border-radius:8px;
+  color:var(--ink-soft);
+  text-align:center;
+}
+.rail-item svg{ width:20px; height:20px; }
+.rail-item span{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem;
+  line-height:1.2;
+  letter-spacing:.01em;
+  text-transform:uppercase;
+}
+.rail-item:hover{ background:var(--paper); color:var(--ink); }
+.rail-item.active{
+  color:var(--green);
+  background:var(--paper);
+  position:relative;
+}
+.rail-item.active::before{
+  content:"";
+  position:absolute; left:-.5rem; top:50%; transform:translateY(-50%);
+  width:3px; height:60%;
+  background:var(--green);
+  border-radius:2px;
+}
+
+/* ---- Contenu principal ---- */
+
+.home-main{ min-width:0; }
+
+.cards-row{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  align-items:start;
+}
+
+.profile-card{
+  position:relative; z-index:1;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 10px 28px -18px rgba(33,46,44,.35);
+}
+.profile-photo{
+  aspect-ratio:4/3.6;
+  position:relative;
+  background:
+    linear-gradient(155deg, rgba(63,107,82,.9), rgba(30,50,42,.92)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1' opacity='0.25'%3E%3Cpath d='M20 260 Q60 200 40 150 Q20 100 70 70 Q120 40 180 60 Q240 80 250 140 Q260 200 210 230 Q160 260 100 250 Q40 240 20 260Z'/%3E%3Cpath d='M40 240 Q70 195 55 155 Q42 115 80 90 Q125 65 170 82 Q220 100 228 145 Q236 195 195 218 Q155 240 105 232 Q55 224 40 240Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:cover;
+  display:flex; align-items:center; justify-content:center;
+}
+.profile-photo .mono{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:2.6rem;
+  color:#F7F4EA;
+  letter-spacing:.02em;
+}
+.profile-body{ padding:1.2rem 1.3rem .4rem; }
+.profile-body h1{ font-size:1.35rem; margin-bottom:.15rem; }
+.profile-role{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--green);
+  margin-bottom:.9rem;
+}
+.social-row{ display:flex; gap:.6rem; margin-bottom:.3rem; }
+.social-row a{
+  width:30px; height:30px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--ink-soft);
+}
+.social-row a:hover{ color:var(--green); border-color:var(--green); }
+.social-row svg{ width:14px; height:14px; }
+
+.profile-actions{
+  display:grid; grid-template-columns:1fr 1fr;
+  border-top:1px dashed var(--line);
+  margin-top:1.1rem;
+}
+.profile-actions a{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.66rem;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  text-align:center;
+  padding:.9em .4em;
+  color:var(--ink-soft);
+}
+.profile-actions a:first-child{ border-right:1px dashed var(--line); }
+.profile-actions a:hover{ color:var(--accent); }
+
+.about-card{
+  position:relative; z-index:2;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:0 14px 32px -20px rgba(33,46,44,.4);
+  padding:1.9rem 2rem;
+  margin-left:-2.2rem;
+  margin-top:1.6rem;
+}
+.about-card h2{ font-size:1.7rem; margin:.4rem 0 1.2rem; }
+.about-card h2 .accent-letter{ color:var(--green); }
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:1.8rem;
+}
+.about-text p{ color:var(--ink); max-width:48ch; }
+
+.info-list{ border-top:1px dashed var(--line); }
+.info-list li{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:.65rem 0;
+  border-bottom:1px dashed var(--line);
+  font-size:.85rem;
+}
+.info-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.64rem;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  color:var(--green);
+  background:var(--paper-deep);
+  border:1px solid var(--line);
+  padding:.25em .55em;
+  border-radius:2px;
+}
+.info-value{ color:var(--ink-soft); text-align:right; }
+
+/* ---- Expertise ---- */
+
+.expertise-section{ margin-top:2.6rem; }
+.expertise-section > .eyebrow{ margin-bottom:1.2rem; }
+.expertise-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.1rem;
+}
+.expertise-card{
+  background:var(--paper-deep);
+  border:1px dashed var(--line);
+  border-radius:12px;
+  padding:1.5rem 1.4rem;
+  text-align:center;
+}
+.expertise-icon{
+  width:52px; height:52px;
+  margin:0 auto .9rem;
+  border-radius:50%;
+  background:var(--green);
+  display:flex; align-items:center; justify-content:center;
+}
+.expertise-icon svg{ width:24px; height:24px; color:var(--paper); }
+.expertise-card h3{ font-size:1.02rem; margin-bottom:.5rem; }
+.expertise-card p{ font-size:.85rem; color:var(--ink-soft); margin:0; }
+
+@media (max-width:860px){
+  .home-shell{ grid-template-columns:1fr; }
+  .icon-rail{
+    position:static;
+    flex-direction:row;
+    justify-content:space-between;
+    overflow-x:auto;
+  }
+  .rail-item{ flex-direction:row; gap:.4rem; width:auto; white-space:nowrap; }
+  .rail-item.active::before{ display:none; }
+  .cards-row{ grid-template-columns:1fr; }
+  .about-card{ margin-left:0; margin-top:1rem; }
+  .about-grid{ grid-template-columns:1fr; }
+  .expertise-grid{ grid-template-columns:1fr; }
+}
