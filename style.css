@@ -618,41 +618,50 @@ footer.page-footer a:hover{
   font-weight:600;
 }
 
-
 /* ==========================================================================
    Missions
    ========================================================================== */
 
-.mission-list{
-  list-style:none;
-  counter-reset:mission;
-  padding-left:0;
-  margin:0 0 1.6rem;
+.mission-list {
+  list-style-type: none !important;
+  counter-reset: mission;
+  padding-left: 0 !important;
+  margin: 0 0 1.6rem;
 }
 
-.mission-list li{
-  counter-increment:mission;
-  display:flex;
-  align-items:center;
-  gap:.8rem;
-  margin-bottom:.8rem;
-  font-size:.94rem;
-  color:var(--ink-soft);
+.mission-list li {
+  list-style-type: none !important;
+  counter-increment: mission;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-bottom: .8rem;
+  padding-left: 0;
+  font-size: .94rem;
+  color: var(--ink-soft);
 }
 
-.mission-list li::before{
-  content:counter(mission);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:2rem;
-  height:2rem;
-  min-width:2rem;
-  border-radius:50%;
-  background:var(--blue);
-  color:#fff;
-  font-weight:700;
+.mission-list li::marker {
+  content: "" !important;
 }
+
+.mission-list li::before {
+  content: counter(mission);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+}
+
+
 
 
 /* ==========================================================================
