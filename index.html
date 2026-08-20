@@ -4,20 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Thibaut Hiernard — Ingénieur géomaticien / Orléans Métropole</title>
-<meta name="description" content="CV en ligne de Thibaut Hiernard, ingénieur géomaticien à Orléans Métropole. Géomatique, cartographie, SIG, ArcGIS.">
+<meta name="description" content="CV en ligne de Thibaut Hiernard, géomaticien à Orléans Métropole. Géomatique, cartographie, SIG, ArcGIS.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="home2">
 
 <header class="topbar">
   <div class="topbar-inner">
-    <span class="topbar-name">Thibaut Hiernard</span>
+    <a class="topbar-name-link" href="index.html">Thibaut Hiernard</a>
     <nav class="topbar-nav" aria-label="Navigation principale">
-      <a href="index.html" aria-current="page">Accueil</a>
       <a href="publications.html">Réalisations</a>
-      <a href="experiences.html">Expérience</a>
-      <a href="formations.html">Formations</a>
+      <a href="experiences.html">Expériences Pro</a>
+      <a href="formations.html">Etudes &amp; Formations</a>
+      <a href="galerie.html">Galerie</a>
       <a href="blog.html">Blog</a>
+      <a href="download.html">Download</a>
     </nav>
   </div>
 </header>
@@ -27,48 +28,59 @@
 
     <div class="home2-profile">
       <div class="avatar-circle">
-        <!-- Remplacez ce monogramme par : <img src="assets/photo.jpg" alt="Thibaut Hiernard"> -->
-        <span class="mono">TH</span>
+        <img src="assets/photo.jpg" alt="Thibaut Hiernard">
       </div>
       <h1>Thibaut Hiernard</h1>
-      <p class="role">Ingénieur Géomaticien</p>
-      <p class="org">Orléans Métropole</p>
 
-      <div class="profile-btns">
+      <ul class="profile-meta">
+        <li><strong>Géomaticien à Orléans Métropole</strong></li>
+        <li>Master 2 Géographie / Université Rennes 2</li>
+        <li>2009–2026 &gt; 17 ans d'expérience en SIG</li>
+        <li>Fonctionnaire territorial titulaire, Ingénieur catégorie A</li>
+      </ul>
+
+      <nav class="quicklinks" aria-label="Accès rapide">
+        <a href="galerie.html">Galerie <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 4l6 6-6 6"/></svg></a>
+        <a href="blog.html">Blog <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 4l6 6-6 6"/></svg></a>
+        <a href="download.html">Download <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 4l6 6-6 6"/></svg></a>
+      </nav>
+    </div>
+
+    <div class="home2-bio home2-lead">
+      <p>Bonjour ! Je suis un géographe passionné de cartes en tout genre (modernes, design ou anciennes) et d'informatiques, un peu geek sur les bords.</p>
+      <p>Je travaille au sein de la Direction de la Planification, de l'Aménagement Urbain et de l'Habitat d'Orléans Métropole.</p>
+
+      <p class="bio-quote">Je mets la vision géomatique au service de la ville de demain, en réalisant des analyses géographiques, des cartographies, des applications web pour faciliter la décision.</p>
+
+      <p style="margin-bottom:.6rem; font-size:.92rem; color:var(--ink-soft);">Mes missions doivent répondre à 3 impératifs :</p>
+      <ol class="mission-list">
+        <li>Faciliter l'expertise métier à travers des solutions visuelles simples</li>
+        <li>Favoriser la transversalité en partageant les informations entre services</li>
+        <li>Comprendre rapidement des sujets complexes avec des outils intuitifs</li>
+      </ol>
+
+      <div class="contact-card">
+        <p>Une question, un projet, une envie d'échanger sur la géomatique ?</p>
         <a class="icon-btn" href="https://www.linkedin.com/in/thibaut-hiernard-818453113/" target="_blank" rel="noopener">
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="4" width="15" height="12" rx="1.5"/><path d="m2.5 5 7.5 6 7.5-6"/></svg>
           Contactez-moi
         </a>
-        <a class="icon-btn ghost" href="#" title="Ajoutez votre fichier cv.pdf">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3v10M6 9l4 4 4-4"/><path d="M3.5 15.5v1a1.5 1.5 0 0 0 1.5 1.5h10a1.5 1.5 0 0 0 1.5-1.5v-1"/></svg>
-          Télécharger mon CV
-        </a>
-      </div>
-    </div>
-
-    <div class="home2-bio">
-      <p class="bio-lead">Je mets la vision géomatique au service de la ville de demain, en réalisant des cartographies, des analyses géographiques, des applications web pour rendre le territoire lisible.</p>
-
-      <div class="bio-sub">
-        <p>Ingénieur géomaticien métier urba/aménagement</p>
-        <p>17 ans d'expérience en géomatique</p>
-        <p>Orléans Métropole — Direction de la Planification, de l'Aménagement Urbain et de l'Habitat</p>
       </div>
 
       <div class="home2-expertise">
         <div class="expertise-card">
           <div class="expertise-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 6 3 12l5 6M16 6l5 6-5 6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>
           </div>
-          <h3>Application Web ESRI</h3>
+          <h3>Projet SIG / Dev. appli ESRI</h3>
           <p>ArcGIS Pro, Experience Builder, ArcGIS Online, Dashboard, Story-Map</p>
         </div>
 
         <div class="expertise-card">
           <div class="expertise-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M11 20V4M18 20v-7"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="6.5"/><path d="m19 19-4.3-4.3"/><path d="M7 11l2-2 2 1.5 3-3.5" stroke-width="1.3"/></svg>
           </div>
-          <h3>Data Analyse</h3>
+          <h3>Geodata Analyse / Processus python</h3>
           <p>Analyse avec ArcGIS Pro, création de processus automatique via Python</p>
         </div>
 
@@ -76,7 +88,7 @@
           <div class="expertise-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5c-3 3-3 14 0 17M12 3.5c3 3 3 14 0 17M3.5 12h17"/></svg>
           </div>
-          <h3>Sémiologie et Design</h3>
+          <h3>Sémiologie graphique / Design UX</h3>
           <p>Cartographies professionnelles et de communication, parcours et expérience utilisateur</p>
         </div>
       </div>
@@ -84,15 +96,176 @@
 
   </div>
 
-  <div class="scroll-cta">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v15M6 13l6 6 6-6"/></svg>
-    <a href="publications.html">Voir mes réalisations</a>
-  </div>
+  <!-- 3 dernières réalisations -->
+  <section class="home-section">
+    <h2>3 dernières réalisations</h2>
+    <div class="realisation-list">
+
+      <div class="realisation-row">
+        <div class="thumb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9.5 9 6l6 3 6-3v11l-6 3-6-3-6 3v-10.5Z"/><path d="M9 6v9.5M15 9v9.5"/></svg>
+        </div>
+        <div>
+          <h3>« Lieux de Fraîcheur » (2025–2026)</h3>
+          <p>L'application qui permet de visualiser, renseigner et exporter les lieux frais de la Métropole.</p>
+          <a class="more-link" href="publications.html">Pour en savoir plus…</a>
+        </div>
+      </div>
+
+      <div class="realisation-row">
+        <div class="thumb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div>
+          <h3>Plan Local d'Urbanisme Métropolitain — graphisme et automatisation</h3>
+          <p>Réalisation de la partie graphique du Plan Local d'Urbanisme d'Orléans Métropole (2020–2022), puis automatisation python/geopandas et optimisation du processus PLUM d'Orléans Métropole (2022–2026).</p>
+          <a class="more-link" href="publications.html">Pour en savoir plus…</a>
+        </div>
+      </div>
+
+      <div class="realisation-row">
+        <div class="thumb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M7.5 8h9M7.5 12h9M7.5 16h5"/></svg>
+        </div>
+        <div>
+          <h3>« Le PLUM en ligne ! » (2022)</h3>
+          <p>L'application qui permet de visualiser sur une carte web les planches graphiques du PLUM.</p>
+          <a class="more-link" href="publications.html">Pour en savoir plus…</a>
+        </div>
+      </div>
+
+    </div>
+    <p class="see-more"><a href="publications.html">Voir plus de réalisations…</a></p>
+  </section>
+
+  <!-- 3 expériences pro marquantes -->
+  <section class="home-section">
+    <h2>3 expériences pro. marquantes</h2>
+    <div class="home-card-list">
+
+      <div class="home-card">
+        <p class="org-logo">Orléans Métropole</p>
+        <div class="entry-head">
+          <h3>Ingénieur géomaticien métier urba/aménagement</h3>
+          <span class="entry-date">Depuis octobre 2022</span>
+        </div>
+        <p class="entry-org">Direction de la Planification, de l'Aménagement Urbain et de l'Habitat — Orléans, France</p>
+        <ul class="entry-list">
+          <li>Chef de projet : mise en place de projets et d'amélioration de processus autour de la gestion de données SIG</li>
+          <li>Chief data officer : administration des données de la direction</li>
+          <li>Calculs et analyses géographiques pour la direction via la gestion des données</li>
+          <li>Production de cartographies et gestion de la cartothèque</li>
+          <li>Réalisation d'applications cartographiques web (webapp/experience builder, dashboard, ArcGIS site, story map) et gestion de l'applithèque</li>
+          <li>Encadrement fonctionnel d'un technicien SIG cartographe</li>
+          <li><strong>Outils :</strong> ArcMap et ArcGIS Pro (ESRI), Arcopole Pro, ArcGIS Online</li>
+          <li><strong>Réf. :</strong> Jane Passarieu, responsable service Planification</li>
+          <li class="field-label">Compétences :</li>
+          <li class="field-label">Indicateurs :</li>
+        </ul>
+        <a class="more-link" href="experiences.html">Pour en savoir plus…</a>
+      </div>
+
+      <div class="home-card">
+        <p class="org-logo">Orléans Métropole</p>
+        <div class="entry-head">
+          <h3>Technicien SIG — cartographe « PLU »</h3>
+          <span class="entry-date">Février 2018 à septembre 2022</span>
+        </div>
+        <p class="entry-org">Direction de la Planification, de l'Aménagement Urbain et de l'Habitat — Orléans, France</p>
+        <ul class="entry-list">
+          <li>Production et amélioration graphique des planches PLU d'Orléans et des communes de la Métropole</li>
+          <li>Responsable SIG PLUM d'Orléans Métropole : structuration CNIG et saisie des données, réalisation des planches cartographiques du PLUM, téléversement sur le Géoportail de l'Urbanisme, réalisation d'appli carto web</li>
+          <li>Production cartographique pour les services de la direction : planification et autorisation d'urbanisme, projets urbains, rénovation urbaine, stratégie foncière, habitat et logement</li>
+          <li>Connaissance globale et amélioration des données géographiques de la direction</li>
+          <li><strong>Outils :</strong> ArcMap (ESRI), ArcGIS Online, Arcopole Pro</li>
+          <li><strong>Réf. :</strong> Grégoire Bedoin, ancien chef de service</li>
+          <li class="field-label">Compétences :</li>
+          <li class="field-label">Indicateurs :</li>
+        </ul>
+        <a class="more-link" href="experiences.html">Pour en savoir plus…</a>
+      </div>
+
+      <div class="home-card">
+        <p class="org-logo">Nantes Métropole</p>
+        <div class="entry-head">
+          <h3>Technicien SIG — cartographe web</h3>
+          <span class="entry-date">Mai 2014 à février 2018</span>
+        </div>
+        <p class="entry-org">Département des Ressources Numériques, Direction de l'information géographique — Nantes, France</p>
+        <ul class="entry-list">
+          <li>Réalisation de services de carte web (Géonantes, appli web de la collectivité) à destination des agents de la Métropole</li>
+          <li>Dispense de formations de prise en main de l'appli Géonantes et des données qu'elle contient</li>
+          <li>Production de cartes papier/pdf pour les directions de la ville de Nantes ou de Nantes Métropole</li>
+          <li>Assistance et conseils SIG auprès des agents-utilisateurs Mapinfo et Géonantes sur les outils, données et techniques cartographiques</li>
+          <li>Aide à la diffusion de données géographiques auprès des entreprises travaillant avec Nantes Métropole dans le cadre de marchés</li>
+          <li>Conseil sur l'écriture de marchés publics pour la partie SIG</li>
+          <li>Assistant d'une petite régie publique concernant la vente de plans de ville et de quartiers auprès des usagers</li>
+          <li><strong>Outils :</strong> ArcMap, ArcGIS Server, Mapinfo, FME</li>
+          <li><strong>Réf. :</strong> Christophe Nicolle, ancien directeur</li>
+          <li class="field-label">Compétences :</li>
+          <li class="field-label">Indicateurs :</li>
+        </ul>
+        <a class="more-link" href="experiences.html">Pour en savoir plus…</a>
+      </div>
+
+    </div>
+    <p class="see-more"><a href="experiences.html">Voir mon expérience professionnelle complète…</a></p>
+  </section>
+
+  <!-- 3 formations fortes -->
+  <section class="home-section">
+    <h2>3 formations fortes</h2>
+    <div class="home-card-list">
+
+      <div class="home-card">
+        <div class="entry-head">
+          <h3>Examen professionnel d'ingénieur territorial (fonction publique territoriale)</h3>
+          <span class="entry-date">Février 2020 à mars 2022</span>
+        </div>
+        <p class="entry-org">CIG Paris grande couronne</p>
+        <p>Spécialité informatique et systèmes d'information, option Systèmes d'Information Géographiques (SIG) &amp; topographie.</p>
+        <ul class="entry-list">
+          <li>Préparation CNFPT</li>
+          <li>Admis à l'examen avec 14,4/20 de moyenne</li>
+          <li>Promu en novembre 2023 (stage) et en mai 2024 (titularisation)</li>
+        </ul>
+        <a class="more-link" href="formations.html">Pour en savoir plus…</a>
+      </div>
+
+      <div class="home-card">
+        <div class="entry-head">
+          <h3>Formations ArcGIS</h3>
+          <span class="entry-date">2016 à 2022</span>
+        </div>
+        <p class="entry-org">ESRI France</p>
+        <p>Série de formations professionnelles sur l'utilisation des outils ArcGIS : ArcGIS Pro, ArcGIS Online, les GeoDataBase, ArcGIS Server.</p>
+        <a class="more-link" href="formations.html">Pour en savoir plus…</a>
+      </div>
+
+      <div class="home-card">
+        <div class="entry-head">
+          <h3>MOOC « ABC de la Gestion de Projet »</h3>
+          <span class="entry-date">Septembre 2015 à novembre 2015</span>
+        </div>
+        <p class="entry-org">École Centrale de Lille</p>
+        <p>Le MOOC Gestion de Projet (GdP) introduit les apprenants à la gestion de projet :</p>
+        <ul class="entry-list">
+          <li>Dans ses fondamentaux → à quoi cela sert-il, quels en sont les principaux « points durs »</li>
+          <li>Dans ses outils → savoir monter un projet, animer une équipe, négocier un objectif, mettre en œuvre la collaboration d'une équipe sur le net</li>
+        </ul>
+        <p>L'objectif de cette formation est d'être capable de concevoir et de piloter un petit projet. Site internet : <a class="more-link" href="http://gestiondeprojet.pm/" target="_blank" rel="noopener">gestiondeprojet.pm</a></p>
+        <a class="more-link" href="formations.html">Pour en savoir plus…</a>
+      </div>
+
+    </div>
+    <p class="see-more"><a href="formations.html">Voir toutes les études et formations pro…</a></p>
+  </section>
+
 </main>
 
 <footer class="page-footer">
   <span>© Thibaut Hiernard</span>
-  <span><a href="experiences.html">Expériences →</a></span>
+  <span><a href="experiences.html">Expériences Pro →</a></span>
 </footer>
 
 <script src="script.js"></script>

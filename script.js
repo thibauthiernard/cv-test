@@ -1,15 +1,7 @@
-// Bascule du menu (légende) sur mobile
+// Calcule l'âge automatiquement (né en 1982) sur tous les éléments .js-age
 document.addEventListener('DOMContentLoaded', function () {
-  var nav = document.querySelector('nav.map-index');
-  var toggle = document.querySelector('.menu-toggle');
-  if (!nav || !toggle) return;
-
-  var isDesktop = window.matchMedia('(min-width: 861px)').matches;
-  nav.setAttribute('data-open', isDesktop ? 'true' : 'false');
-
-  toggle.addEventListener('click', function () {
-    var open = nav.getAttribute('data-open') === 'true';
-    nav.setAttribute('data-open', open ? 'false' : 'true');
-    toggle.setAttribute('aria-expanded', String(!open));
+  var age = new Date().getFullYear() - 1982;
+  document.querySelectorAll('.js-age').forEach(function (el) {
+    el.textContent = age + ' ans';
   });
 });

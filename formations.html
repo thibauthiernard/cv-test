@@ -8,133 +8,98 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="layout">
 
-  <aside class="sidebar">
-    <svg class="compass" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
-      <circle cx="16" cy="16" r="14"/>
-      <path d="M16 4v4M16 24v4M4 16h4M24 16h4"/>
-      <path d="M16 9l3.5 5.5L16 23l-3.5-8.5z" stroke-width="1"/>
-    </svg>
-
-    <div class="avatar" aria-hidden="true">TH</div>
-
-    <h1>Thibaut Hiernard</h1>
-    <p class="job-title">Ingénieur géomaticien<br>Orléans Métropole</p>
-
-    <ul class="tag-list">
-      <li class="tag">Géomatique</li>
-      <li class="tag">Cartographie</li>
-      <li class="tag">SIG</li>
-      <li class="tag">ArcGIS</li>
-    </ul>
-
-    <ul class="meta-list">
-      <li>44 ans</li>
-      <li>Permis de conduire</li>
-      <li>Orléans, France</li>
-      <li>En poste — en simple veille</li>
-    </ul>
-
-    <p class="coords">47.9029° N — 1.9039° E</p>
-
-    <div class="sidebar-links">
-      <a class="btn primary" href="https://www.linkedin.com/in/thibaut-hiernard-818453113/" target="_blank" rel="noopener">Me contacter sur LinkedIn</a>
-    </div>
-
-    <button class="menu-toggle" aria-expanded="false">
-      <span>Sommaire</span><span aria-hidden="true">＋</span>
-    </button>
-
-    <nav class="map-index" aria-label="Pages du CV">
-      <ul>
-        <li><a href="index.html"><span class="n">01</span> Accueil</a></li>
-        <li><a href="experiences.html"><span class="n">02</span> Expériences</a></li>
-        <li><a href="formations.html" aria-current="page"><span class="n">03</span> Formations</a></li>
-        <li><a href="competences.html"><span class="n">04</span> Compétences</a></li>
-        <li><a href="publications.html"><span class="n">05</span> Publications</a></li>
-      </ul>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="topbar-name-link" href="index.html">Thibaut Hiernard</a>
+    <nav class="topbar-nav" aria-label="Navigation principale">
+      <a href="publications.html">Réalisations</a>
+      <a href="experiences.html">Expériences Pro</a>
+      <a href="formations.html" aria-current="page">Etudes &amp; Formations</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="blog.html">Blog</a>
+      <a href="download.html">Download</a>
     </nav>
-  </aside>
+  </div>
+</header>
 
-  <main>
-    <div class="sheet-header">
-      <p class="eyebrow">Feuille 03 — Formations</p>
-      <h2>De l'aménagement du territoire aux systèmes d'information géographique.</h2>
-      <p class="lede">Un master en aménagement, complété par des formations continues en SIG, ArcGIS, gestion de projet et un examen professionnel d'ingénieur territorial.</p>
+<div class="page-shell">
+  <div class="page-hero">
+    <p class="eyebrow">Etudes &amp; Formations</p>
+    <h1>De l'aménagement du territoire aux systèmes d'information géographique</h1>
+    <p class="lede">Un master en aménagement, complété par des formations continues en SIG, ArcGIS, gestion de projet et un examen professionnel d'ingénieur territorial.</p>
+  </div>
+
+  <section class="timeline">
+    <div class="card">
+      <div class="entry-head">
+        <h3>Examen professionnel d'ingénieur territorial (fonction publique territoriale)</h3>
+        <span class="entry-date">Février 2020 à mars 2022</span>
+      </div>
+      <p class="entry-org">CIG Paris grande couronne</p>
+      <p>Spécialité informatique et systèmes d'information, option Systèmes d'Information Géographiques (SIG) et topographie.</p>
+      <ul class="entry-list">
+        <li>Préparation CNFPT</li>
+        <li>Admis à l'examen avec 14,4/20 de moyenne</li>
+        <li>Promu en novembre 2023 (stage) et en mai 2024 (titularisation)</li>
+      </ul>
     </div>
 
-    <section class="timeline">
-      <div class="card">
-        <div class="entry-head">
-          <h3>Examen professionnel d'ingénieur territorial (fonction publique territoriale)</h3>
-          <span class="entry-date">Février 2020 à mars 2022</span>
-        </div>
-        <p class="entry-org">CIG Paris grande couronne</p>
-        <p>Spécialité informatique et systèmes d'information, option Systèmes d'Information Géographiques (SIG) et topographie.</p>
-        <ul class="entry-list">
-          <li>Préparation CNFPT</li>
-          <li>Admis à l'examen avec 14,4/20 de moyenne</li>
-        </ul>
+    <div class="card">
+      <div class="entry-head">
+        <h3>Formations ArcGIS</h3>
+        <span class="entry-date">2016 à 2022</span>
       </div>
+      <p class="entry-org">ESRI France</p>
+      <p>Série de formations professionnelles sur l'utilisation des outils ArcGIS : ArcGIS Pro, ArcGIS Online, les GeoDataBase, ArcGIS Server.</p>
+    </div>
 
-      <div class="card">
-        <div class="entry-head">
-          <h3>Formations ArcGIS</h3>
-          <span class="entry-date">2016 à 2022</span>
-        </div>
-        <p class="entry-org">ESRI France</p>
-        <p>Série de formations professionnelles sur l'utilisation des outils ArcGIS : ArcGIS Pro, ArcGIS Online, les GeoDataBase, ArcGIS Server.</p>
+    <div class="card">
+      <div class="entry-head">
+        <h3>MOOC « ABC de la Gestion de Projet »</h3>
+        <span class="entry-date">Septembre 2015 à novembre 2015</span>
       </div>
+      <p class="entry-org">École Centrale de Lille</p>
+      <p>Le MOOC Gestion de Projet (GdP) introduit les apprenants à la gestion de projet :</p>
+      <ul class="entry-list">
+        <li>Dans ses fondamentaux : à quoi cela sert-il, quels en sont les principaux « points durs »</li>
+        <li>Dans ses outils : savoir monter un projet, animer une équipe, négocier un objectif, mettre en œuvre la collaboration d'une équipe sur le net</li>
+      </ul>
+      <p>L'objectif de cette formation est d'être capable de concevoir et de piloter un petit projet. Site internet : <a href="http://gestiondeprojet.pm/" target="_blank" rel="noopener">gestiondeprojet.pm</a></p>
+    </div>
 
-      <div class="card">
-        <div class="entry-head">
-          <h3>MOOC « ABC de la Gestion de Projet »</h3>
-          <span class="entry-date">Septembre 2015 à novembre 2015</span>
-        </div>
-        <p class="entry-org">École Centrale de Lille</p>
-        <p>Le MOOC Gestion de Projet (GdP) introduit les apprenants à la gestion de projet :</p>
-        <ul class="entry-list">
-          <li>Dans ses fondamentaux : à quoi cela sert-il, quels en sont les principaux « points durs »</li>
-          <li>Dans ses outils : savoir monter un projet, animer une équipe, négocier un objectif, mettre en œuvre la collaboration d'une équipe sur le net</li>
-        </ul>
-        <p>L'objectif de cette formation est d'être capable de concevoir et de piloter un petit projet.</p>
+    <div class="card">
+      <div class="entry-head">
+        <h3>Initiation au langage SQL</h3>
+        <span class="entry-date">Octobre 2012</span>
       </div>
+      <p class="entry-org">ENI de Saint-Herblain</p>
+      <p>Formation professionnelle sur 2 jours ayant pour but de décrire le fonctionnement du langage SQL indépendamment des dérivations réalisées par les éditeurs de SGBDR (Système de Gestion de Bases de Données Relationnel). Néanmoins, ce langage a été appliqué par l'intermédiaire de MySQL et d'Oracle.</p>
+    </div>
 
-      <div class="card">
-        <div class="entry-head">
-          <h3>Initiation au langage SQL</h3>
-          <span class="entry-date">Octobre 2012</span>
-        </div>
-        <p class="entry-org">ENI de Saint-Herblain</p>
-        <p>Formation professionnelle sur 2 jours ayant pour but de décrire le fonctionnement du langage SQL indépendamment des dérivations réalisées par les éditeurs de SGBDR (Système de Gestion de Bases de Données Relationnel). Néanmoins, ce langage a été appliqué par l'intermédiaire de MySQL et d'Oracle.</p>
+    <div class="card">
+      <div class="entry-head">
+        <h3>Formation SIG</h3>
+        <span class="entry-date">Mai 2011 à décembre 2011</span>
       </div>
+      <p class="entry-org">INSET-CNFPT de Dunkerque</p>
+      <p>4 modules de 3 jours chacun sur l'acquisition, la gestion, l'administration et l'exploitation des données spatiales.</p>
+    </div>
 
-      <div class="card">
-        <div class="entry-head">
-          <h3>Formation SIG</h3>
-          <span class="entry-date">Mai 2011 à décembre 2011</span>
-        </div>
-        <p class="entry-org">INSET-CNFPT de Dunkerque</p>
-        <p>4 modules de 3 jours chacun sur l'acquisition, la gestion, l'administration et l'exploitation des données spatiales.</p>
+    <div class="card">
+      <div class="entry-head">
+        <h3>Master 2 Pro. Aménagement et Collectivités Territoriales</h3>
+        <span class="entry-date">Septembre 2006 à novembre 2007</span>
       </div>
-
-      <div class="card">
-        <div class="entry-head">
-          <h3>Master 2 Pro. Aménagement et Collectivités Territoriales</h3>
-          <span class="entry-date">Septembre 2006 à novembre 2007</span>
-        </div>
-        <p class="entry-org">Université de Rennes 2 Haute-Bretagne</p>
-        <p>Ce master a pour objectif de former des professionnels de l'aménagement aptes à concevoir et piloter des projets dans des collectivités territoriales (communes, EPCI, départements, régions, État) ou des bureaux d'études, agences d'urbanisme, sociétés d'économie mixte, promoteurs ou sociétés HLM, etc.</p>
-      </div>
-    </section>
-  </main>
-
+      <p class="entry-org">Université de Rennes 2 Haute-Bretagne</p>
+      <p>Ce master a pour objectif de former des professionnels de l'aménagement aptes à concevoir et piloter des projets dans des collectivités territoriales (communes, EPCI, départements, régions, État) ou des bureaux d'études, agences d'urbanisme, sociétés d'économie mixte, promoteurs ou sociétés HLM, etc.</p>
+    </div>
+  </section>
 </div>
 
 <footer class="page-footer">
   <span>© Thibaut Hiernard</span>
-  <span><a href="competences.html">Feuille 04 — Compétences →</a></span>
+  <span><a href="galerie.html">Galerie →</a></span>
 </footer>
 
 <script src="script.js"></script>
