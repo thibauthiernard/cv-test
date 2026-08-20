@@ -650,14 +650,15 @@ footer.page-footer a:hover{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  min-width: 2rem;
-  height: 2rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  min-width: 1.8rem;
   border-radius: 50%;
-  background: var(--blue);
-  color: #fff;
-  font-weight: 700;
+  background: transparent;
+  border: 1.5px solid var(--blue-soft);
+  color: var(--blue);
+  font-size: .78rem;
+  font-weight: 600;
   line-height: 1;
 }
 
