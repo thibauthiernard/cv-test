@@ -194,11 +194,19 @@ footer.page-footer a:hover{ color:var(--blue); }
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:.6rem;
+  gap:.45rem;
   font-size:.88rem;
   color:var(--ink-soft);
   text-align:center;
 }
+
+.profile-meta li svg{
+  width:18px;
+  height:18px;
+  flex:none;
+  color:var(--blue);
+}
+
 
 .profile-meta li svg{ width:18px; height:18px; flex:none; color:var(--blue); }
 .profile-meta li:first-child{ color:var(--ink); font-weight:600; }
