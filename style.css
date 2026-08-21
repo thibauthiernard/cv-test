@@ -237,7 +237,7 @@ footer.page-footer a:hover{ color:var(--blue); }
 .home2-lead p.bio-quote-line{
   font-family:'Outfit',sans-serif; font-weight:400; font-style:italic;
   font-size:clamp(1.15rem,2.2vw,1.5rem); line-height:1.5;
-  color:var(--ink); max-width:56ch; margin-top:1rem; margin-bottom:2rem;
+  color:var(--ink); max-width:56ch; margin-top:25px; margin-bottom:2rem;
 }
 
 .expertise-panel{
