@@ -312,7 +312,8 @@ footer.page-footer a:hover{ color:var(--blue); }
    Compléments page d'accueil enrichie (v3)
    ========================================================================== */
 
-.topbar-name-link{ font-family:'Outfit',sans-serif; font-weight:600; font-size:1.2rem; letter-spacing:.01em; color:#fff; }
+.topbar-name-link{ display:flex; align-items:center; gap:.6rem; font-family:'Outfit',sans-serif; font-weight:600; font-size:1.2rem; letter-spacing:.01em; color:#fff; }
+.topbar-logo{ width:30px; height:30px; border-radius:50%; display:block; flex-shrink:0; }
 
 .home2-lead p{ color:var(--ink); }
 .home2-lead .bio-quote{ margin-top:1rem; }
