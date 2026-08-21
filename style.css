@@ -313,7 +313,7 @@ footer.page-footer a:hover{ color:var(--blue); }
    ========================================================================== */
 
 .topbar-name-link{ display:flex; align-items:center; gap:.6rem; font-family:'Outfit',sans-serif; font-weight:600; font-size:1.2rem; letter-spacing:.01em; color:#fff; }
-.topbar-logo{ width:42px; height:42px; border-radius:50%; display:block; flex-shrink:0; }
+.topbar-logo{ height:2.9rem; width:2.9rem; border-radius:50%; display:block; flex-shrink:0; object-fit:cover; }
 
 .home2-lead p{ color:var(--ink); }
 .home2-lead .bio-quote{ margin-top:1rem; }
@@ -370,18 +370,19 @@ footer.page-footer a:hover{ color:var(--blue); }
   display:flex; justify-content:center; align-items:center;
   margin:2.2rem 0 0;
   color:var(--blue);
-  opacity:.55;
 }
 .scroll-cue svg{
-  width:28px; height:28px;
-  animation:scroll-cue-bounce 1.8s ease-in-out infinite;
+  width:16px; height:16px;
+  animation:scroll-cue-drop 1.6s ease-in-out infinite;
 }
-@keyframes scroll-cue-bounce{
-  0%, 100%{ transform:translateY(0); opacity:.55; }
-  50%{ transform:translateY(8px); opacity:1; }
+@keyframes scroll-cue-drop{
+  0%{ transform:translateY(-7px); opacity:0; }
+  40%{ opacity:1; }
+  70%{ opacity:1; }
+  100%{ transform:translateY(7px); opacity:0; }
 }
 @media (prefers-reduced-motion: reduce){
-  .scroll-cue svg{ animation:none; }
+  .scroll-cue svg{ animation:none; opacity:.6; }
 }
 
 .home-section{ margin-top:4rem; }
