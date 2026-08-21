@@ -379,7 +379,7 @@ footer.page-footer a:hover{ color:var(--blue); }
   color:var(--blue);
 }
 .scroll-cue svg{
-  width:16px; height:16px;
+  width:32px; height:32px;
   animation:scroll-cue-drop 1.6s ease-in-out infinite;
 }
 @keyframes scroll-cue-drop{
