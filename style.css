@@ -75,9 +75,16 @@ img{ max-width:100%; display:block; }
   text-transform:uppercase;
   letter-spacing:.05em;
   color:var(--blue-soft);
+  padding-bottom:.4rem;
+  border-bottom:3px solid transparent;
+  transition:color .2s ease, border-color .2s ease;
 }
 .topbar-nav a:hover{ color:#fff; }
-.topbar-nav a[aria-current="page"]{ color:#fff; }
+.topbar-nav a[aria-current="page"],
+.topbar-nav a.is-scroll-active{
+  color:#fff;
+  border-bottom-color:#fff;
+}
 
 /* ==========================================================================
    Pages secondaires : en-tête + contenu générique

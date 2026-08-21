@@ -5,3 +5,28 @@ document.addEventListener('DOMContentLoaded', function () {
     el.textContent = age + ' ans';
   });
 });
+
+// Surligne le lien de nav correspondant pendant le scroll sur la page d'accueil
+document.addEventListener('DOMContentLoaded', function () {
+  var sections = document.querySelectorAll('[id^="section-"]');
+  if (!sections.length) return;
+
+  var navLinks = document.querySelectorAll('.topbar-nav a[data-section]');
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      var link = document.querySelector('.topbar-nav a[data-section="' + entry.target.id + '"]');
+      if (!link) return;
+      if (entry.isIntersecting) {
+        navLinks.forEach(function (l) { l.classList.remove('is-scroll-active'); });
+        link.classList.add('is-scroll-active');
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '-45% 0px -50% 0px',
+    threshold: 0
+  });
+
+  sections.forEach(function (section) { observer.observe(section); });
+});
