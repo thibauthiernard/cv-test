@@ -8,14 +8,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Surligne le lien de nav correspondant pendant le scroll sur la page d'accueil
 document.addEventListener('DOMContentLoaded', function () {
-  var sections = document.querySelectorAll('[id^="section-"]');
+  var sections = document.querySelectorAll('[data-nav]');
   if (!sections.length) return;
 
   var navLinks = document.querySelectorAll('.topbar-nav a[data-section]');
 
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
-      var link = document.querySelector('.topbar-nav a[data-section="' + entry.target.id + '"]');
+      var key = entry.target.getAttribute('data-nav');
+      var link = document.querySelector('.topbar-nav a[data-section="' + key + '"]');
       if (!link) return;
       if (entry.isIntersecting) {
         navLinks.forEach(function (l) { l.classList.remove('is-scroll-active'); });

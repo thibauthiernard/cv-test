@@ -70,6 +70,7 @@ img{ max-width:100%; display:block; }
 .topbar-name{ font-family:'Outfit',sans-serif; font-weight:600; font-size:1.2rem; letter-spacing:.01em; color:#fff; }
 .topbar-nav{ display:flex; gap:1.6rem; flex-wrap:wrap; }
 .topbar-nav a{
+  display:flex; align-items:center; gap:.5rem;
   font-family:'Inter',sans-serif; font-weight:700;
   font-size:.72rem;
   text-transform:uppercase;
@@ -85,6 +86,8 @@ img{ max-width:100%; display:block; }
   color:#fff;
   border-bottom-color:#fff;
 }
+.topbar-nav .nav-icon{ display:none; width:19px; height:19px; flex-shrink:0; }
+.topbar-nav .nav-label{ display:block; }
 
 /* ==========================================================================
    Pages secondaires : en-tête + contenu générique
@@ -127,13 +130,194 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 }
 .entry-foot strong{ color:var(--ink); }
 
-.timeline{ position:relative; }
-.timeline::before{ content:""; position:absolute; left:-1px; top:6px; bottom:6px; width:1px; background:var(--line); }
-.timeline .card{ margin-left:1.4rem; }
-.timeline .card::after{
-  content:""; position:absolute; left:-1.75rem; top:1.5rem; width:9px; height:9px;
-  border-radius:50%; background:#fff; border:2px solid var(--blue);
+/* ==========================================================================
+   Page Parcours : timeline "voyage dans le temps" (2026 → 2000)
+   ========================================================================== */
+
+.anchor-target{ position:absolute; }
+
+.parcours-hero .parcours-tagline{
+  font-family:'Outfit',sans-serif; font-weight:600; font-style:italic;
+  color:var(--blue-deep);
 }
+
+/* --- Boutons de navigation rapide vers les phases --- */
+.phase-nav{
+  display:flex; gap:1rem; flex-wrap:wrap;
+  margin:0 0 3rem;
+}
+.phase-link{
+  flex:1 1 220px;
+  border:1px solid var(--line); border-radius:var(--radius);
+  padding:1rem 1.2rem;
+  background:var(--panel);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.phase-link:hover{
+  border-color:var(--blue);
+  background:#fff;
+  box-shadow:0 10px 24px -14px rgba(47,62,158,.35);
+  transform:translateY(-2px);
+}
+.phase-nav-label{
+  display:block;
+  font-family:'Inter',sans-serif; font-weight:700; font-size:.64rem;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--blue);
+}
+.phase-nav-title{
+  display:block; margin-top:.35rem;
+  font-family:'Outfit',sans-serif; font-weight:600; font-size:1.02rem;
+}
+.phase-nav-range{
+  display:block; margin-top:.25rem;
+  font-size:.76rem; color:var(--ink-soft); letter-spacing:.03em;
+  font-variant-numeric:tabular-nums;
+}
+
+/* --- Conteneur timeline --- */
+.time-travel-timeline{ position:relative; }
+
+.time-phase{
+  position:relative;
+  padding:2.2rem 0 1rem;
+  scroll-margin-top:6.5rem;
+  overflow:hidden;
+  border-radius:var(--radius);
+}
+.time-phase + .time-phase{ margin-top:1.5rem; }
+
+/* fond estompé propre à chaque phase (photos ou motif cartographique) */
+.phase-bg{
+  position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden;
+  -webkit-mask-image:linear-gradient(to bottom, transparent 0, #000 10%, #000 88%, transparent 100%);
+  mask-image:linear-gradient(to bottom, transparent 0, #000 10%, #000 88%, transparent 100%);
+}
+.phase-bg img{
+  position:absolute; width:46%; max-width:340px;
+  filter:grayscale(1) contrast(1.05);
+  opacity:.10;
+  object-fit:cover;
+}
+.phase-bg img:first-child{ left:-4%; top:2%; height:55%; border-radius:var(--radius); }
+.phase-bg img:last-child{ left:6%; top:52%; height:48%; border-radius:var(--radius); }
+.phase-bg.pattern{
+  opacity:1;
+  background-image:
+    radial-gradient(circle at 14% 22%, rgba(47,62,158,.09) 0, rgba(47,62,158,.09) 34%, transparent 35%),
+    radial-gradient(circle at 14% 22%, rgba(47,62,158,.065) 0, rgba(47,62,158,.065) 52%, transparent 53%),
+    radial-gradient(circle at 14% 22%, rgba(47,62,158,.045) 0, rgba(47,62,158,.045) 70%, transparent 71%),
+    repeating-linear-gradient(0deg, rgba(47,62,158,.05) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(90deg, rgba(47,62,158,.05) 0 1px, transparent 1px 32px);
+}
+
+.phase-heading{
+  position:relative; z-index:1;
+  display:flex; align-items:baseline; flex-wrap:wrap; gap:.7rem 1rem;
+  margin-bottom:2rem;
+}
+.phase-heading .phase-index{
+  font-family:'Inter',sans-serif; font-weight:700; font-size:.68rem;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:#fff; background:var(--blue);
+  padding:.3rem .65rem; border-radius:999px;
+}
+.phase-heading h2{ font-size:1.5rem; }
+.phase-heading .phase-years{
+  font-size:.85rem; color:var(--ink-soft);
+  font-variant-numeric:tabular-nums; letter-spacing:.03em;
+}
+
+/* --- Un événement de la timeline --- */
+.time-event{
+  position:relative; z-index:1;
+  display:grid; grid-template-columns:140px 1fr;
+  gap:1.6rem 2rem;
+  padding:1.5rem 0;
+}
+.time-event + .time-event{ border-top:1px dashed var(--line); }
+
+.time-event-year{ position:relative; padding-left:1.6rem; }
+.time-phase::before{
+  content:""; position:absolute; left:145px; top:5.2rem; bottom:1.5rem;
+  width:1px; background:var(--line); z-index:1;
+}
+.time-event-year::before{
+  content:""; position:absolute; left:-1.15rem; top:.35rem;
+  width:10px; height:10px; border-radius:50%;
+  background:#fff; border:2px solid var(--blue); z-index:2;
+}
+.year-big{
+  display:block; font-family:'Outfit',sans-serif; font-weight:700;
+  font-size:1.85rem; line-height:1; color:var(--blue-deep);
+  font-variant-numeric:tabular-nums;
+}
+.year-tag{
+  display:block; margin-top:.35rem;
+  font-family:'Inter',sans-serif; font-weight:700; font-size:.64rem;
+  text-transform:uppercase; letter-spacing:.07em; color:var(--ink-soft);
+}
+
+.event-kind{
+  display:inline-flex; align-items:center; gap:.4rem;
+  font-family:'Inter',sans-serif; font-weight:700; font-size:.66rem;
+  text-transform:uppercase; letter-spacing:.05em;
+  padding:.28rem .6rem; border-radius:999px;
+  margin-bottom:.7rem;
+}
+.kind-poste{ color:var(--blue-deep); background:#E7EAFB; }
+.kind-formation{ color:#8A5A00; background:#FCEED3; }
+.kind-evolution{ color:#0F7A5B; background:#DCF4E8; }
+
+.time-event-body h3{ font-size:1.06rem; margin-bottom:.35rem; }
+.time-event-body .event-org{
+  font-size:.84rem; color:var(--ink-soft); margin-bottom:.6rem;
+}
+.time-event-body > p:not(.event-org){ color:var(--ink); font-size:.92rem; }
+.event-list{ margin:.5rem 0 0; }
+.event-list li{
+  position:relative; padding-left:1.05rem; margin-bottom:.4rem;
+  font-size:.92rem; color:var(--ink);
+}
+.event-list li::before{ content:"–"; position:absolute; left:0; color:var(--blue-soft); }
+.event-foot{
+  display:flex; flex-wrap:wrap; gap:.4rem 1.2rem;
+  font-family:'Inter',sans-serif; font-weight:700; font-size:.72rem; color:var(--ink-soft);
+  border-top:1px solid var(--line); padding-top:.6rem; margin-top:.8rem;
+}
+.event-foot strong{ color:var(--ink); }
+
+/* --- "Saut temporel" entre deux événements/phases --- */
+.time-jump{
+  position:relative; z-index:1;
+  display:inline-flex; align-items:center; gap:.6rem;
+  margin:.3rem 0 .3rem 1.6rem;
+  padding:.55rem 1.05rem;
+  border:1px dashed var(--blue-soft); border-radius:999px;
+  background:#fff;
+  font-family:'Inter',sans-serif; font-weight:700; font-size:.68rem;
+  letter-spacing:.09em; text-transform:uppercase; color:var(--blue);
+}
+.time-jump .jump-icon{ width:15px; height:15px; flex-shrink:0; animation:jump-pulse 1.7s ease-in-out infinite; }
+@keyframes jump-pulse{
+  0%,100%{ opacity:.5; transform:translateX(0); }
+  50%{ opacity:1; transform:translateX(-3px); }
+}
+@media (prefers-reduced-motion:reduce){ .time-jump .jump-icon{ animation:none; } }
+
+@media (max-width:700px){
+  .time-phase::before{ left:1.1rem; top:4.6rem; }
+  .time-event{ grid-template-columns:1fr; gap:.8rem; }
+  .time-event-year{
+    display:flex; align-items:baseline; gap:.6rem; padding-left:1.6rem;
+  }
+  .time-event-year::before{ top:.3rem; }
+  .year-big{ font-size:1.4rem; }
+  .year-tag{ margin-top:0; }
+  .phase-bg img{ display:none; }
+  .time-jump{ margin-left:1.6rem; }
+}
+
+
 
 /* Compétences */
 .skill-cat{ margin-bottom:2.2rem; }
@@ -313,6 +497,31 @@ footer.page-footer a:hover{ color:var(--blue); }
   .realisation-grid{ grid-template-columns:1fr; }
   .topbar-inner{ flex-direction:column; align-items:flex-start; }
   .topbar-nav{ gap:1rem; }
+}
+
+/* Ruban en mode smartphone : liens texte -> icône + libellé sous l'icône */
+@media (max-width:640px){
+  .topbar-inner{ align-items:stretch; gap:.9rem; }
+  .topbar-name-link{ justify-content:center; }
+  .topbar-nav{
+    width:100%;
+    justify-content:space-between;
+    row-gap:.7rem; column-gap:.4rem;
+  }
+  .topbar-nav a{
+    flex:1 1 27%;
+    flex-direction:column;
+    justify-content:flex-start;
+    gap:.3rem;
+    padding:.2rem .1rem .5rem;
+  }
+  .topbar-nav .nav-icon{ display:block; }
+  .topbar-nav .nav-label{
+    font-size:.56rem;
+    letter-spacing:.02em;
+    text-align:center;
+    white-space:nowrap;
+  }
 }
 
 /* ==========================================================================

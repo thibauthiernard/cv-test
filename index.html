@@ -17,13 +17,30 @@
   <div class="topbar-inner">
     <a class="topbar-name-link" href="index.html"><img class="topbar-logo" src="assets/logo-topbar.png" alt="">Thibaut Hiernard</a>
     <nav class="topbar-nav" aria-label="Navigation principale">
-      <a href="publications.html" data-section="section-realisations">Réalisations</a>
-      <a href="experiences.html" data-section="section-experience">Expérience</a>
-      <a href="formations.html" data-section="section-formations">Formations</a>
-      <a href="galerie.html">Galerie</a>
-      <a href="blog.html">Blog</a>
-      <a href="download.html">Download</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" aria-current="page">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>
+        <span class="nav-label">Accueil</span>
+      </a>
+      <a href="publications.html" data-section="realisations">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="m4 17 5-5 3.5 3.5L17 11l4 4"/></svg>
+        <span class="nav-label">Réalisations</span>
+      </a>
+      <a href="parcours.html" data-section="parcours">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
+        <span class="nav-label">Parcours</span>
+      </a>
+      <a href="blog.html">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h13a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4Z"/><path d="M20 20a3 3 0 0 1-3-3V6"/><path d="M7.5 8h8M7.5 11.5h8M7.5 15h4.5"/></svg>
+        <span class="nav-label">Blog</span>
+      </a>
+      <a href="ressources.html">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v12M7.5 10.5 12 15l4.5-4.5"/><path d="M4 18v1.5A2.5 2.5 0 0 0 6.5 22h11a2.5 2.5 0 0 0 2.5-2.5V18"/></svg>
+        <span class="nav-label">Ressources</span>
+      </a>
+      <a href="contact.html">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
+        <span class="nav-label">Contact</span>
+      </a>
     </nav>
   </div>
 </header>
@@ -60,13 +77,13 @@
           <a href="contact.html" title="Contact" aria-label="Contact">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
           </a>
-          <a href="galerie.html" title="Galerie" aria-label="Galerie">
+          <a href="publications.html" title="Réalisations" aria-label="Réalisations">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="m4 17 5-5 3.5 3.5L17 11l4 4"/></svg>
           </a>
           <a href="blog.html" title="Blog" aria-label="Blog">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h13a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4Z"/><path d="M20 20a3 3 0 0 1-3-3V6"/><path d="M7.5 8h8M7.5 11.5h8M7.5 15h4.5"/></svg>
           </a>
-          <a href="download.html" title="Download" aria-label="Download">
+          <a href="ressources.html" title="Ressources" aria-label="Ressources">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v12M7.5 10.5 12 15l4.5-4.5"/><path d="M4 18v1.5A2.5 2.5 0 0 0 6.5 22h11a2.5 2.5 0 0 0 2.5-2.5V18"/></svg>
           </a>
         </div>
@@ -104,7 +121,7 @@
   </div>
 
   <!-- BEST OF REALISATIONS -->
-  <section class="home-section" id="section-realisations">
+  <section class="home-section" id="section-realisations" data-nav="realisations">
     <h2>Réalisations</h2>
     <div class="realisation-list">
 
@@ -161,7 +178,7 @@
   </section>
 
   <!-- BEST OF EXPERIENCES -->
-<section class="home-section" id="section-experience">
+<section class="home-section" id="section-experience" data-nav="parcours">
   <h2>Expérience</h2>
 
   <div class="experience-list">
@@ -185,7 +202,7 @@
           Chef de projet SIG et référent données, pilotage de la production cartographique et d’applications web, encadrement fonctionnel d’un technicien SIG cartographe.
         </p>
 
-        <a class="more-link" href="experiences.html">Pour en savoir plus…</a>
+        <a class="more-link" href="parcours.html#experience">Pour en savoir plus…</a>
       </div>
     </div>
 
@@ -209,7 +226,7 @@
           Responsable SIG du PLUM, structuration et gestion de données d’urbanisme, production cartographique et réalisation d’applications web pour les services de la direction.
         </p>
 
-        <a class="more-link" href="experiences.html">Pour en savoir plus…</a>
+        <a class="more-link" href="parcours.html#experience">Pour en savoir plus…</a>
       </div>
     </div>
 
@@ -233,19 +250,19 @@
           Réalisation et administration de services cartographiques web, production cartographique, formation et accompagnement des utilisateurs SIG, diffusion de données géographiques et appui aux marchés publics SIG.
         </p>
 
-        <a class="more-link" href="experiences.html">Pour en savoir plus…</a>
+        <a class="more-link" href="parcours.html#experience">Pour en savoir plus…</a>
       </div>
     </div>
 
   </div>
 
   <p class="see-more">
-    <a href="experiences.html">Voir mon expérience professionnelle complète…</a>
+    <a href="parcours.html#experience">Voir mon expérience professionnelle complète…</a>
   </p>
 </section>  
 
   <!-- BEST OF FORMATIONS -->
-  <section class="home-section" id="section-formations">
+  <section class="home-section" id="section-formations" data-nav="parcours">
     <h2>Formations</h2>
     <div class="home-card-list">
 
@@ -261,7 +278,7 @@
           <li>Admis à l'examen avec 14,4/20 de moyenne</li>
           <li>Promu en novembre 2023 (stage) et en mai 2024 (titularisation)</li>
         </ul>
-        <a class="more-link" href="formations.html">Pour en savoir plus…</a>
+        <a class="more-link" href="parcours.html#formations">Pour en savoir plus…</a>
       </div>
 
       <div class="home-card">
@@ -271,7 +288,7 @@
         </div>
         <p class="entry-org">ESRI France</p>
         <p>Série de formations professionnelles sur l'utilisation des outils ArcGIS : ArcGIS Pro, ArcGIS Online, les GeoDataBase, ArcGIS Server.</p>
-        <a class="more-link" href="formations.html">Pour en savoir plus…</a>
+        <a class="more-link" href="parcours.html#formations">Pour en savoir plus…</a>
       </div>
 
       <div class="home-card">
@@ -286,18 +303,18 @@
           <li>Dans ses outils → savoir monter un projet, animer une équipe, négocier un objectif, mettre en œuvre la collaboration d'une équipe sur le net</li>
         </ul>
         <p>L'objectif de cette formation est d'être capable de concevoir et de piloter un petit projet. Site internet : <a class="more-link" href="http://gestiondeprojet.pm/" target="_blank" rel="noopener">gestiondeprojet.pm</a></p>
-        <a class="more-link" href="formations.html">Pour en savoir plus…</a>
+        <a class="more-link" href="parcours.html#formations">Pour en savoir plus…</a>
       </div>
 
     </div>
-    <p class="see-more"><a href="formations.html">Voir toutes les études et formations pro…</a></p>
+    <p class="see-more"><a href="parcours.html#formations">Voir toutes les études et formations pro…</a></p>
   </section>
 
 </main>
 
 <footer class="page-footer">
   <span>© Thibaut Hiernard</span>
-  <span><a href="experiences.html">Expérience →</a></span>
+  <span><a href="publications.html">Réalisations →</a></span>
 </footer>
 
 <script src="script.js"></script>
