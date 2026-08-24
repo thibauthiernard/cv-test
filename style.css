@@ -89,6 +89,24 @@ img{ max-width:100%; display:block; }
 .topbar-nav .nav-icon{ display:none; width:19px; height:19px; flex-shrink:0; }
 .topbar-nav .nav-label{ display:block; }
 
+/* Sur l'accueil, seul « Accueil » reste actif dans le ruban. */
+.home2 .topbar-nav a.is-scroll-active:not([aria-current="page"]){
+  color:var(--blue-soft);
+  border-bottom-color:transparent;
+}
+
+/* Poste actuel (accueil) */
+.current-position-card{
+  border-left:3px solid var(--blue);
+}
+
+.current-position-description{
+  font-size:.94rem;
+  color:var(--ink);
+  margin:0 0 .8rem;
+  line-height:1.55;
+}
+
 /* ==========================================================================
    Pages secondaires : en-tête + contenu générique
    ========================================================================== */
@@ -339,27 +357,6 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 .level[data-lvl="avance"]{ background:var(--blue-soft); color:#fff; }
 .level[data-lvl="bon"]{ background:#fff; border:1px solid var(--ink-soft); color:var(--ink-soft); }
 
-/* Publications */
-.pub-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.1rem; }
-.pub-card{ background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:1.4rem; display:flex; flex-direction:column; gap:.6rem; }
-.pub-kind{ font-family:'Inter',sans-serif; font-weight:700; font-size:.65rem; letter-spacing:.08em; text-transform:uppercase; color:var(--blue); }
-.pub-card h3{ font-size:1.05rem; line-height:1.3; }
-.pub-card p{ font-size:.88rem; color:var(--ink-soft); margin-bottom:0; }
-.pub-card .pub-link{
-  margin-top:auto; font-family:'Inter',sans-serif; font-weight:700; font-size:.72rem; color:var(--ink);
-  border-top:1px solid var(--line); padding-top:.6rem; display:inline-flex; align-items:center; gap:.4em;
-}
-.pub-card .pub-link:hover{ color:var(--blue); }
-
-footer.page-footer{
-  max-width:1180px; margin:0 auto; padding:0 var(--gutter) var(--gutter);
-  font-family:'Inter',sans-serif; font-weight:700; font-size:.7rem; color:var(--ink-soft);
-  display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem;
-}
-footer.page-footer a:hover{ color:var(--blue); }
-
-@media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } *{ transition:none !important; } }
-
 /* ==========================================================================
    Page d'accueil (index.html)
    ========================================================================== */
@@ -461,51 +458,6 @@ footer.page-footer a:hover{ color:var(--blue); }
 }
 .expertise-card h3{ font-size:1rem; font-weight:700; margin:0 0 .5rem; color:var(--ink); }
 .expertise-card p{ font-size:.83rem; color:var(--ink-soft); margin:0; line-height:1.45; }
-
-/* Réalisations (accueil) */
-.realisations-section{ margin-top:4rem; }
-.realisations-section h2{ font-size:1.6rem; margin:.5rem 0 1.6rem; }
-.realisation-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin-bottom:1.8rem; }
-.realisation-card{
-  display:block; background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
-  padding:1.4rem; transition:border-color .15s ease, transform .15s ease;
-}
-.realisation-card:hover{ border-color:var(--blue-soft); transform:translateY(-2px); }
-.realisation-illustration{
-  width:100%; aspect-ratio:16/10; border-radius:8px; margin-bottom:1rem;
-  background:linear-gradient(155deg, var(--blue), var(--blue-deep));
-  display:flex; align-items:center; justify-content:center;
-}
-.realisation-illustration svg{ width:34px; height:34px; color:#fff; }
-.realisation-card h3{ font-size:1rem; margin-bottom:.4rem; }
-.realisation-card p{ font-size:.85rem; color:var(--ink-soft); margin:0; }
-
-.voir-plus{ text-align:center; }
-.voir-plus a{
-  font-family:'Inter',sans-serif; font-weight:700; font-size:.75rem; text-transform:uppercase; letter-spacing:.06em;
-  color:var(--blue); border-bottom:1px dashed var(--blue-soft); padding-bottom:.15rem;
-}
-.voir-plus a:hover{ color:var(--blue-deep); }
-
-.scroll-cta{ display:flex; flex-direction:column; align-items:center; gap:.5rem; margin:3.5rem 0 1rem; color:var(--blue); }
-.scroll-cta svg{ width:22px; height:22px; animation:bob 1.8s ease-in-out infinite; }
-.scroll-cta a{
-  font-family:'Inter',sans-serif; font-weight:700; font-size:.75rem; text-transform:uppercase; letter-spacing:.06em;
-  color:var(--blue); border-bottom:1px dashed var(--blue-soft); padding-bottom:.1rem;
-}
-.scroll-cta a:hover{ color:var(--blue-deep); }
-
-@keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(6px); } }
-@media (prefers-reduced-motion:reduce){ .scroll-cta svg{ animation:none; } }
-
-@media (max-width:860px){
-  .home2-grid{ grid-template-columns:1fr; }
-  .home2-profile{ margin-bottom:1rem; }
-  .home2-expertise{ grid-template-columns:1fr; }
-  .realisation-grid{ grid-template-columns:1fr; }
-  .topbar-inner{ flex-direction:column; align-items:flex-start; }
-  .topbar-nav{ gap:1rem; }
-}
 
 /* Ruban en mode smartphone : liens texte -> icône + libellé sous l'icône */
 @media (max-width:640px){
@@ -618,51 +570,49 @@ footer.page-footer a:hover{ color:var(--blue); }
   margin-bottom:1.8rem;
 }
 
-.realisation-list{
-  display:flex;
-  flex-direction:column;
-  gap:1rem;
-  margin-bottom:1.4rem;
+
+
+
+/* ==========================================================================
+   Galerie de réalisations
+   ========================================================================== */
+
+.realisation-gallery{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1.2rem;
 }
 
-.realisation-row{
-  display:grid;
-  grid-template-columns:220px 1fr;
-  gap:1.6rem;
-  align-items:center;
+.realisation-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  aspect-ratio:1/1;
+  overflow:hidden;
   background:var(--panel);
   border:1px solid var(--line);
   border-radius:var(--radius);
-  padding:1.2rem 1.4rem;
+  color:var(--ink);
+  text-decoration:none;
+  transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 
-.realisation-row .thumb{
-  width:100%;
-  aspect-ratio:16/10;
-  border-radius:8px;
+.realisation-card:hover{
+  border-color:var(--blue-soft);
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+}
+
+.realisation-card-image{
+  position:relative;
+  flex:0 0 62.5%;
+  min-height:0;
   overflow:hidden;
-  background:linear-gradient(155deg, var(--blue), var(--blue-deep));
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  background:linear-gradient(155deg,var(--blue),var(--blue-deep));
 }
 
-.realisation-row .thumb a{
-  display:block;
-  width:100%;
-  height:100%;
-  padding:0;
-  margin:0;
-  background:transparent;
-  border:0;
-  line-height:0;
-}
-
-.realisation-row .thumb a:hover{
-  background:transparent;
-}
-
-.realisation-row .thumb a img{
+.realisation-card-image img{
   display:block;
   width:100%;
   height:100%;
@@ -670,25 +620,97 @@ footer.page-footer a:hover{ color:var(--blue); }
   transition:transform .35s ease;
 }
 
-.realisation-row .thumb a:hover img{
+.realisation-card:hover .realisation-card-image img{
   transform:scale(1.04);
 }
 
-.realisation-row .thumb svg{
-  width:32px;
-  height:32px;
+.realisation-card-title{
+  flex:1;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:1rem 1.1rem;
+  background:var(--panel);
+}
+
+.realisation-card-title h3{
+  margin:0;
+  font-size:1rem;
+  line-height:1.25;
+  font-weight:700;
+}
+
+.realisation-card-title span{
+  margin-top:.35rem;
+  font-family:'Inter',sans-serif;
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:var(--blue);
+}
+
+.realisation-card-more{
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:var(--blue);
+  border-color:var(--blue);
   color:#fff;
 }
 
-.realisation-row h3{
-  font-size:1.05rem;
-  margin-bottom:.4rem;
+.realisation-card-more:hover{
+  background:var(--blue-deep);
+  border-color:var(--blue-deep);
 }
 
-.realisation-row p{
-  font-size:.9rem;
-  color:var(--ink-soft);
-  margin-bottom:.5rem;
+.realisation-more-inner{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:.55rem;
+  padding:1rem;
+  font-family:'Inter',sans-serif;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+
+.realisation-more-icon{
+  font-family:'Inter',sans-serif;
+  font-size:2rem;
+  font-weight:300;
+  line-height:1;
+}
+
+.realisation-gallery-all{
+  margin-bottom:1rem;
+}
+
+@media (max-width:860px){
+  .realisation-gallery{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width:560px){
+  .realisation-gallery{
+    grid-template-columns:1fr;
+  }
+
+  .realisation-card{
+    max-width:100%;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .realisation-card,
+  .realisation-card-image img{
+    transition:none;
+  }
 }
 
 /* Expériences professionnelles (accueil) */
@@ -790,9 +812,6 @@ footer.page-footer a:hover{ color:var(--blue); }
 .home-card .more-link{ margin-top:.8rem; }
 
 @media (max-width:760px){
-  .realisation-row{
-    grid-template-columns:1fr;
-  }
 
   .experience-row{
     grid-template-columns:1fr;
@@ -819,3 +838,19 @@ footer.page-footer a:hover{ color:var(--blue); }
   object-fit: contain;
 }
 
+
+
+/* Galerie Réalisations sur l'accueil */
+#section-realisations{
+  margin-top:4rem;
+}
+#section-realisations > h2{
+  margin-bottom:1.8rem;
+}
+
+
+/* Accueil : l'onglet Accueil reste l'onglet actif, sans état lié au scroll. */
+body.home2 .topbar-nav a[aria-current="page"]{
+  color:#fff;
+  border-bottom-color:#fff;
+}
