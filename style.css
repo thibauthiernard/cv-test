@@ -664,11 +664,59 @@ section > .eyebrow{ margin-bottom:1.1rem; }
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:transform .35s ease;
+  transition:transform .35s ease, filter .3s ease;
 }
 
-.realisation-card:hover .realisation-card-image img{
+.realisation-card-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:rgba(255,255,255,0);
+  transition:background .3s ease;
+  pointer-events:none;
+}
+
+.realisation-card-overlay{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1.1rem;
+  text-align:center;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .3s ease, visibility .3s ease;
+  pointer-events:none;
+}
+
+.realisation-card-overlay p{
+  max-width:34ch;
+  margin:0;
+  color:#000;
+  font-family:'Inter',sans-serif;
+  font-size:clamp(.76rem,1.05vw,.92rem);
+  line-height:1.42;
+  font-weight:700;
+}
+
+.realisation-card:hover .realisation-card-image img,
+.realisation-card:focus-visible .realisation-card-image img{
+  filter:blur(4px);
   transform:scale(1.04);
+}
+
+.realisation-card:hover .realisation-card-image::after,
+.realisation-card:focus-visible .realisation-card-image::after{
+  background:rgba(255,255,255,.72);
+}
+
+.realisation-card:hover .realisation-card-overlay,
+.realisation-card:focus-visible .realisation-card-overlay{
+  opacity:1;
+  visibility:visible;
 }
 
 .realisation-card-title{
@@ -906,4 +954,22 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 body.home2 .topbar-nav a[aria-current="page"]{
   color:#fff;
   border-bottom-color:#fff;
+}
+
+
+/* Projets à venir : emplacements réservés dans la galerie */
+.realisation-card-placeholder{ cursor:default; }
+.realisation-card-placeholder:hover{
+  border-color:var(--line);
+  transform:none;
+  box-shadow:none;
+}
+
+@media (max-width:860px){
+  .realisation-card-overlay p{ font-size:clamp(.74rem,1.7vw,.9rem); }
+}
+
+@media (max-width:560px){
+  .realisation-card-overlay{ padding:1rem; }
+  .realisation-card-overlay p{ font-size:.9rem; }
 }
