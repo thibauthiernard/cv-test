@@ -704,13 +704,13 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 
 .realisation-card:hover .realisation-card-image img,
 .realisation-card:focus-visible .realisation-card-image img{
-  filter:blur(2px);
+  filter:blur(4px);
   transform:scale(1.04);
 }
 
 .realisation-card:hover .realisation-card-image::after,
 .realisation-card:focus-visible .realisation-card-image::after{
-  background:rgba(255,255,255,.55);
+  background:rgba(255,255,255,.72);
 }
 
 .realisation-card:hover .realisation-card-overlay,
