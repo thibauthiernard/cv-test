@@ -697,9 +697,9 @@ section > .eyebrow{ margin-bottom:1.1rem; }
   margin:0;
   color:#000;
   font-family:'Inter',sans-serif;
-  font-size:clamp(.76rem,1.05vw,.92rem);
-  line-height:1.42;
-  font-weight:700;
+  font-size:clamp(.76rem,1.15vw,.92rem);
+  line-height:1.8;
+  font-weight:500;
 }
 
 .realisation-card:hover .realisation-card-image img,
