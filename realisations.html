@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog — Thibaut Hiernard</title>
+<title>Réalisations — Thibaut Hiernard</title>
+<meta name="description" content="Publications et applications cartographiques web réalisées par Thibaut Hiernard : le PLUM d'Orléans Métropole en ligne.">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
@@ -20,7 +21,7 @@
         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>
         <span class="nav-label">Accueil</span>
       </a>
-      <a href="realisations.html" data-section="realisations">
+      <a href="realisations.html" data-section="realisations" aria-current="page">
         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="m4 17 5-5 3.5 3.5L17 11l4 4"/></svg>
         <span class="nav-label">Réalisations</span>
       </a>
@@ -28,7 +29,7 @@
         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
         <span class="nav-label">Parcours</span>
       </a>
-      <a href="blog.html" aria-current="page">
+      <a href="blog.html">
         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h13a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4Z"/><path d="M20 20a3 3 0 0 1-3-3V6"/><path d="M7.5 8h8M7.5 11.5h8M7.5 15h4.5"/></svg>
         <span class="nav-label">Blog</span>
       </a>
@@ -46,15 +47,49 @@
 
 <div class="page-shell">
   <div class="page-hero">
-    <p class="eyebrow">Blog</p>
-    <h1>Bientôt disponible</h1>
-    <p class="lede">Cette page accueillera prochainement des articles et retours d'expérience sur la géomatique et la cartographie.</p>
+    <p class="eyebrow">Réalisations</p>
+    <h1>Le PLUM d'Orléans Métropole, du papier à l'application web</h1>
+    <p class="lede">Articles de presse interne et applications cartographiques réalisées autour du Plan Local d'Urbanisme Métropolitain.</p>
   </div>
+
+  <section>
+    <div class="pub-grid">
+
+      <article class="pub-card">
+        <span class="pub-kind">Appli carto web</span>
+        <h3>Le PLUM en ligne d'Orléans Métropole</h3>
+        <p>Application cartographique web de consultation du Plan Local d'Urbanisme Métropolitain d'Orléans Métropole. Application ESRI créée à partir d'Experience Builder — septembre 2022.</p>
+        <a class="pub-link" href="https://www.orleans-metropole.fr/leplumenligne" target="_blank" rel="noopener">www.orleans-metropole.fr/leplumenligne →</a>
+      </article>
+
+      <article class="pub-card">
+        <span class="pub-kind">Appli carto web</span>
+        <h3>Carte interactive DPU / PLUM</h3>
+        <p>Application cartographique web de consultation des zonages du Droit de Préemption Urbain et du Plan Local d'Urbanisme Métropolitain. Application ESRI créée à partir de Webapp Builder — mai 2022.</p>
+        <a class="pub-link" href="https://mapo.orleans-metropole.fr/portal/apps/webappviewer/index.html?id=0f496d0372554a58917352241282e90e" target="_blank" rel="noopener">Voir la carte →</a>
+      </article>
+
+      <article class="pub-card">
+        <span class="pub-kind">Article</span>
+        <h3>Le PLUM en ligne !</h3>
+        <p>Article extrait du journal interne de la mairie d'Orléans et d'Orléans Métropole.</p>
+        <a class="pub-link" href="https://www.doyoubuzz.com/var/f/kx/cj/kxcjHtzjsNZI5f8LupQy4BUYgTCcAoqXD09G631xRbi_master.jpeg" target="_blank" rel="noopener">Lire l'article →</a>
+      </article>
+
+      <article class="pub-card">
+        <span class="pub-kind">Article</span>
+        <h3>L'adoption du PLUM d'Orléans Métropole : 5 ans, 56 kg !</h3>
+        <p>Article extrait du journal interne de la mairie d'Orléans et d'Orléans Métropole.</p>
+        <a class="pub-link" href="https://www.doyoubuzz.com/var/f/kx/cj/kxcjm_ltpx04-jFnozKLAqNsB2cUyvuhIbYDTM58Z3Q_master.jpeg" target="_blank" rel="noopener">Lire l'article →</a>
+      </article>
+
+    </div>
+  </section>
 </div>
 
 <footer class="page-footer">
   <span>© Thibaut Hiernard</span>
-  <span><a href="ressources.html">Ressources →</a></span>
+  <span><a href="parcours.html">Parcours →</a></span>
 </footer>
 
 <script src="script.js"></script>
