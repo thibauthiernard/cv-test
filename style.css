@@ -704,7 +704,7 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 
 .realisation-card:hover .realisation-card-image img,
 .realisation-card:focus-visible .realisation-card-image img{
-  filter:blur(4px);
+  filter:blur(2px);
   transform:scale(1.04);
 }
 
