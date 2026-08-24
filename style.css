@@ -710,7 +710,7 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 
 .realisation-card:hover .realisation-card-image::after,
 .realisation-card:focus-visible .realisation-card-image::after{
-  background:rgba(255,255,255,.50);
+  background:rgba(255,255,255,.30);
 }
 
 .realisation-card:hover .realisation-card-overlay,
