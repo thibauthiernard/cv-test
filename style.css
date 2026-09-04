@@ -1021,3 +1021,79 @@ body.home2 .topbar-nav a[aria-current="page"]{
   .realisation-card-overlay{ padding:1rem; }
   .realisation-card-overlay p{ font-size:.9rem; }
 }
+
+/* ==========================================================================
+   Pied de page : crédits (toutes les pages)
+   ========================================================================== */
+
+.site-footer{
+  background:var(--panel);
+  border-top:1px solid var(--line);
+  margin-top:4rem;
+}
+
+.site-footer-inner{
+  max-width:1180px; margin:0 auto;
+  padding:1.8rem var(--gutter) 2.2rem;
+  display:flex; flex-wrap:wrap;
+  justify-content:space-between; align-items:flex-end;
+  gap:1.4rem 2rem;
+}
+
+.site-footer-main{ max-width:48ch; }
+
+.site-footer-credit{
+  font-family:'Inter',sans-serif; font-size:.86rem;
+  color:var(--ink); line-height:1.55;
+  margin:0 0 .35rem;
+}
+.site-footer-credit strong{ font-weight:700; color:var(--ink); }
+.footer-ai{ color:var(--blue); font-weight:600; }
+
+.site-footer-meta{
+  font-family:'Inter',sans-serif; font-size:.74rem;
+  color:var(--ink-soft); letter-spacing:.02em;
+  margin:0;
+}
+
+.site-footer-side{
+  display:flex; flex-direction:column; align-items:flex-end;
+  gap:.55rem; text-align:right;
+}
+
+.site-footer-version{
+  display:flex; align-items:center; gap:.5rem;
+  font-family:'Inter',sans-serif; font-size:.72rem;
+  color:var(--ink-soft); white-space:nowrap;
+  margin:0;
+}
+
+.footer-version-tag{
+  font-family:'Inter',sans-serif; font-weight:700; font-size:.62rem;
+  color:#fff; background:var(--blue);
+  padding:.16rem .5rem; border-radius:999px; letter-spacing:.03em;
+  white-space:nowrap;
+}
+
+.site-footer-next{
+  font-family:'Inter',sans-serif; font-weight:600; font-size:.82rem;
+  color:var(--blue);
+}
+.site-footer-next:hover{ color:var(--blue-deep); }
+
+/* Version mobile : plus discrète, centrée, texte réduit */
+@media (max-width:640px){
+  .site-footer{ margin-top:2.6rem; }
+  .site-footer-inner{
+    flex-direction:column; align-items:center; text-align:center;
+    padding:1.3rem var(--gutter) 1.6rem;
+    gap:.7rem;
+  }
+  .site-footer-main{ max-width:none; }
+  .site-footer-credit{ font-size:.72rem; }
+  .site-footer-meta{ font-size:.62rem; }
+  .site-footer-side{ align-items:center; text-align:center; }
+  .site-footer-version{ font-size:.62rem; }
+  .footer-version-tag{ font-size:.56rem; padding:.1rem .42rem; }
+  .site-footer-next{ font-size:.74rem; }
+}
