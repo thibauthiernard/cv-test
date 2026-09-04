@@ -960,6 +960,24 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 }
 .home-card .more-link{ margin-top:.8rem; }
 
+.current-position-photo{
+  margin:0;
+  line-height:0;
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:0 16px 34px -24px rgba(20,30,60,.25);
+}
+.current-position-photo img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+@media (max-width:640px){
+  .current-position-photo{ border-radius:10px; }
+}
+
 @media (max-width:760px){
 
   .experience-row{
