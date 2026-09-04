@@ -458,6 +458,24 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 .expertise-card h3{ font-size:1rem; font-weight:700; margin:0 0 .5rem; color:var(--ink); }
 .expertise-card p{ font-size:.83rem; color:var(--ink-soft); margin:0; line-height:1.45; }
 
+/* Accueil responsive : la colonne profil passe au-dessus de la bio,
+   le cadre "Mon expertise" et la phrase d'intro s'adaptent aux petits écrans */
+@media (max-width:860px){
+  .home2-grid{ grid-template-columns:1fr; gap:2.2rem; }
+  .home2-profile{ height:auto; }
+}
+
+@media (max-width:640px){
+  .home2-lead p.bio-quote-line{
+    font-size:1.1rem;
+    margin-top:1.4rem;
+    margin-bottom:1.5rem;
+  }
+  .expertise-panel{ padding:1.3rem 1.2rem 1.5rem; border-radius:12px; }
+  .expertise-title{ font-size:.92rem; margin-bottom:1rem; }
+  .home2-expertise{ grid-template-columns:1fr; gap:1rem; }
+}
+
 /* Ruban en mode smartphone :
    - logo + nom restent en haut à gauche
    - le lien Contact devient une icône seule, fixée en haut à droite
@@ -506,20 +524,22 @@ section > .eyebrow{ margin-bottom:1.1rem; }
     white-space:nowrap;
   }
 
-  /* Contact : sort du bandeau du bas et se fixe en haut à droite, icône seule, en blanc */
+  /* Contact : sort du bandeau du bas et se fixe en haut à droite (icône + libellé, comme le bandeau du bas) */
   .topbar-nav a.nav-contact{
     position:fixed;
-    top:.95rem;
+    top:.7rem;
     right:var(--gutter);
     bottom:auto; left:auto;
     flex:none;
+    flex-direction:column;
+    align-items:center;
+    gap:.28rem;
     padding:0;
     color:#fff;
     z-index:21;
   }
   .topbar-nav a.nav-contact:hover{ color:#fff; }
   .topbar-nav a.nav-contact .nav-icon{ width:22px; height:22px; }
-  .topbar-nav a.nav-contact .nav-label{ display:none; }
 
   /* On réserve la place en bas de page pour ne rien cacher derrière le bandeau fixe */
   body{ padding-bottom:4.6rem; }
@@ -569,19 +589,6 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 }
 .contact-card p{ margin:0; font-size:.92rem; color:var(--ink-soft); }
 .contact-card .icon-btn{ white-space:nowrap; }
-
-.quicklinks{ margin-top:auto; padding-top:1.1rem; }
-.quicklinks-row, .icon-row{ display:flex; gap:.55rem; justify-content:center; }
-.icon-row a{
-  width:44px; height:44px;
-  display:flex; align-items:center; justify-content:center;
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:8px;
-  color:var(--blue);
-}
-.icon-row a svg{ width:19px; height:19px; }
-.icon-row a:hover{ background:var(--blue); border-color:var(--blue); color:#fff; }
 
 .scroll-cue{
   display:flex; justify-content:center; align-items:center;
