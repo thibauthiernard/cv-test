@@ -88,6 +88,24 @@ img{ max-width:100%; display:block; }
 .topbar-nav .nav-icon{ display:none; width:19px; height:19px; flex-shrink:0; }
 .topbar-nav .nav-label{ display:block; }
 
+/* Conteneur qui regroupe le ruban de nav et le sélecteur de langue à droite */
+.topbar-right{ display:flex; align-items:center; gap:1.4rem; }
+
+/* Sélecteur de langue FR / EN, à droite de Contact dans le ruban */
+.lang-switch{
+  display:flex; align-items:center; gap:.4rem;
+  font-family:'Inter',sans-serif; font-weight:700; font-size:.72rem;
+  letter-spacing:.05em;
+}
+.lang-btn{
+  background:none; border:none; padding:0; margin:0;
+  font:inherit; color:var(--blue-soft); cursor:pointer;
+  transition:color .2s ease;
+}
+.lang-btn:hover{ color:#fff; }
+.lang-btn.is-active{ color:#fff; cursor:default; }
+.lang-sep{ color:var(--blue-soft); }
+
 /* Sur l'accueil, seul « Accueil » reste actif dans le ruban. */
 .home2 .topbar-nav a.is-scroll-active:not([aria-current="page"]){
   color:var(--blue-soft);
@@ -528,7 +546,7 @@ section > .eyebrow{ margin-bottom:1.1rem; }
   .topbar-nav a.nav-contact{
     position:fixed;
     top:.7rem;
-    right:var(--gutter);
+    right:calc(var(--gutter) + 3.2rem); /* décalé pour laisser la place au sélecteur de langue */
     bottom:auto; left:auto;
     flex:none;
     flex-direction:column;
@@ -540,6 +558,17 @@ section > .eyebrow{ margin-bottom:1.1rem; }
   }
   .topbar-nav a.nav-contact:hover{ color:#fff; }
   .topbar-nav a.nav-contact .nav-icon{ width:22px; height:22px; }
+
+  /* Sélecteur de langue FR / EN : fixé en haut à droite, à droite de Contact */
+  .lang-switch{
+    position:fixed;
+    top:1.05rem;
+    right:var(--gutter);
+    bottom:auto; left:auto;
+    gap:.3rem;
+    font-size:.66rem;
+    z-index:22;
+  }
 
   /* On réserve la place en bas de page pour ne rien cacher derrière le bandeau fixe */
   body{ padding-bottom:4.6rem; }

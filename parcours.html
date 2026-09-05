@@ -16,6 +16,7 @@
 <header class="topbar">
   <div class="topbar-inner">
     <a class="topbar-name-link" href="index.html"><img class="topbar-logo" src="assets/logo-topbar.png" alt="">Thibaut Hiernard</a>
+    <div class="topbar-right">
     <nav class="topbar-nav" aria-label="Navigation principale">
       <a href="index.html">
         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>
@@ -42,6 +43,12 @@
         <span class="nav-label">Contact</span>
       </a>
     </nav>
+      <div class="lang-switch" role="group" aria-label="Changer de langue">
+        <button type="button" class="lang-btn" data-lang="fr">FR</button>
+        <span class="lang-sep">/</span>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -531,5 +538,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="lang.js"></script>
 </body>
 </html>
