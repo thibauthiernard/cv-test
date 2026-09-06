@@ -1066,7 +1066,7 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 .current-position-card .entry-head{ grid-area:head; }
 .current-position-card .entry-org{ grid-area:org; }
 .current-position-card .current-position-description{ grid-area:desc; }
-.current-position-card .more-link{ grid-area:link; }
+.current-position-card .more-link{ grid-area:link; justify-self:start; }
 
 .current-position-thumb{
   grid-area:thumb;
@@ -1096,7 +1096,7 @@ section > .eyebrow{ margin-bottom:1.1rem; }
   margin-top:3.5rem;
 }
 .home-badges-row img{
-  height:104px;
+  height:124px;
   width:auto;
   object-fit:contain;
 }
@@ -1121,7 +1121,7 @@ section > .eyebrow{ margin-bottom:1.1rem; }
     justify-items:center;
     gap:1.6rem;
   }
-  .home-badges-row img{ height:84px; }
+  .home-badges-row img{ height:112px; }
 }
 
 @media (max-width:760px){
