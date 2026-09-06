@@ -670,18 +670,24 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 /* Conclusion de la page d'accueil */
 .home-outro{
   margin-top:4rem;
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:clamp(2rem,4vw,3rem) clamp(1.5rem,4vw,3rem);
-  text-align:center;
+}
+.home-outro-title{
+  font-family:'Outfit',sans-serif;
+  font-weight:700;
+  font-size:1.5rem;
+  color:var(--ink);
+  margin-bottom:1.4rem;
 }
 .home-outro-text{
   max-width:64ch;
-  margin:0 auto;
+  margin:0 0 1rem;
   font-size:1rem;
   line-height:1.8;
   color:var(--ink);
+  text-align:left;
+}
+.home-outro-text.home-outro-closing{
+  margin-top:1.4rem;
 }
 .home-outro-text a{
   color:var(--blue);
@@ -694,7 +700,8 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 .home-outro-text a:hover{ color:var(--blue-deep); border-bottom-color:var(--blue); }
 
 @media (max-width:640px){
-  .home-outro{ margin-top:2.6rem; padding:1.6rem 1.2rem; border-radius:12px; }
+  .home-outro{ margin-top:2.6rem; }
+  .home-outro-title{ font-size:1.25rem; margin-bottom:1.1rem; }
   .home-outro-text{ font-size:.9rem; line-height:1.7; }
 }
 
