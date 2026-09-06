@@ -998,7 +998,6 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 .current-position-media{
   display:flex;
   align-items:center;
-  justify-content:flex-end;
   gap:1.4rem;
 }
 
@@ -1022,8 +1021,8 @@ section > .eyebrow{ margin-bottom:1.1rem; }
   overflow:hidden;
   border:1px solid var(--line);
   box-shadow:0 16px 34px -24px rgba(20,30,60,.25);
-  max-width:min(55%, 360px);
-  flex:0 1 auto;
+  flex:1 1 auto;
+  min-width:0;
 }
 .current-position-photo img{
   width:100%;
@@ -1032,10 +1031,10 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 }
 
 @media (max-width:640px){
-  .current-position-media{ gap:.9rem; }
-  .current-position-badges{ gap:.7rem; }
+  .current-position-media{ flex-direction:column; align-items:stretch; gap:.9rem; }
+  .current-position-badges{ flex-direction:row; flex-wrap:wrap; justify-content:center; gap:.9rem; }
   .current-position-badges img{ height:52px; }
-  .current-position-photo{ max-width:min(58%, 260px); border-radius:10px; }
+  .current-position-photo{ border-radius:10px; }
 }
 
 @media (max-width:760px){
