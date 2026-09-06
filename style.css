@@ -670,6 +670,9 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 /* Conclusion de la page d'accueil */
 .home-outro{
   margin-top:4rem;
+  width:60%;
+  margin-left:auto;
+  margin-right:auto;
 }
 .home-outro-title{
   font-family:'Outfit',sans-serif;
@@ -1047,77 +1050,64 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 }
 .home-card .more-link{ margin-top:.8rem; }
 
-/* Photo en pleine largeur, avec dégradé de transparence sur les deux côtés
-   et 8 badges superposés directement sur l'image (4 à gauche, 4 à droite,
-   étagés en hauteur, parfaitement symétriques) */
-.current-position-media{ width:100%; }
-
-.current-position-photo{
-  position:relative;
-  margin:0;
-  width:100%;
-  line-height:0;
-}
-
-.current-position-photo-img{
-  display:block;
-  width:100%;
-  height:auto;
-  -webkit-mask-image:linear-gradient(to right,
-    transparent 0%,
-    rgba(0,0,0,.35) 10%,
-    #000 28%,
-    #000 72%,
-    rgba(0,0,0,.35) 90%,
-    transparent 100%);
-  mask-image:linear-gradient(to right,
-    transparent 0%,
-    rgba(0,0,0,.35) 10%,
-    #000 28%,
-    #000 72%,
-    rgba(0,0,0,.35) 90%,
-    transparent 100%);
-}
-
-.current-position-badges{
-  position:absolute;
-  top:0;
-  bottom:0;
+/* Carte "Poste actuel" : texte à gauche, photo en miniature à droite */
+.current-position-card{
   display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  padding:3% 0;
-  pointer-events:none;
+  align-items:center;
+  gap:1.6rem;
 }
-.current-position-badges-left{ left:1%; align-items:flex-start; }
-.current-position-badges-right{ right:1%; align-items:flex-end; }
+.current-position-text{ flex:1 1 auto; min-width:0; }
 
-.current-position-badges img{
+.current-position-thumb{
+  flex:0 0 150px;
+  width:150px;
+  height:150px;
+  margin:0;
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:0 16px 34px -24px rgba(20,30,60,.25);
+}
+.current-position-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* Rangée de badges tout en bas de la page */
+.home-badges-row{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:2rem;
+  margin-top:3.5rem;
+}
+.home-badges-row img{
   height:104px;
   width:auto;
   object-fit:contain;
-  filter:drop-shadow(0 6px 14px rgba(20,30,60,.3));
 }
 
 @media (max-width:640px){
-  .current-position-badges{ padding:2% 0; }
-  .current-position-badges img{ height:56px; }
-  .current-position-photo-img{
-    -webkit-mask-image:linear-gradient(to right,
-      transparent 0%,
-      rgba(0,0,0,.35) 15%,
-      #000 36%,
-      #000 64%,
-      rgba(0,0,0,.35) 85%,
-      transparent 100%);
-    mask-image:linear-gradient(to right,
-      transparent 0%,
-      rgba(0,0,0,.35) 15%,
-      #000 36%,
-      #000 64%,
-      rgba(0,0,0,.35) 85%,
-      transparent 100%);
+  .current-position-card{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:1.2rem;
   }
+  .current-position-thumb{
+    flex:0 0 auto;
+    width:110px;
+    height:110px;
+    align-self:center;
+  }
+
+  .home-badges-row{
+    margin-top:2.4rem;
+    gap:1.2rem;
+  }
+  .home-badges-row img{ height:56px; }
 }
 
 @media (max-width:760px){
