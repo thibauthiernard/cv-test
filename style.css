@@ -700,9 +700,19 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 .home-outro-text a:hover{ color:var(--blue-deep); border-bottom-color:var(--blue); }
 
 @media (max-width:640px){
-  .home-outro{ margin-top:2.6rem; }
+  .home-outro{
+    margin-top:2.6rem;
+    max-width:320px;      /* même largeur que la photo du poste actuel */
+    margin-left:auto;
+    margin-right:auto;    /* bloc centré sur la page */
+  }
   .home-outro-title{ font-size:1.25rem; margin-bottom:1.1rem; }
-  .home-outro-text{ font-size:.9rem; line-height:1.7; }
+  .home-outro-text{
+    max-width:none;       /* occupe toute la largeur du bloc centré */
+    font-size:.9rem;
+    line-height:1.7;
+    text-align:left;      /* texte aligné à gauche à l'intérieur du bloc */
+  }
 }
 
 
@@ -1047,33 +1057,43 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 }
 .home-card .more-link{ margin-top:.8rem; }
 
+/* Photo centrale flanquée d'une colonne de badges de chaque côté
+   (la colonne de droite est prête à accueillir de futurs badges) */
 .current-position-media{
-  display:flex;
+  display:grid;
+  grid-template-columns:150px 1fr 150px;
   align-items:center;
-  gap:1.4rem;
+  gap:1.6rem;
 }
+
+.current-position-badges-wrap{ display:contents; }
 
 .current-position-badges{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:1rem;
-  flex:none;
+  gap:1.2rem;
 }
+.current-position-badges-left{ grid-column:1; }
+.current-position-badges-right{ grid-column:3; }
+
 .current-position-badges img{
-  height:78px;
+  height:104px;
   width:auto;
   object-fit:contain;
 }
 
 .current-position-photo{
+  grid-column:2;
+  justify-self:center;
   margin:0;
   line-height:0;
   border-radius:var(--radius);
   overflow:hidden;
   border:1px solid var(--line);
   box-shadow:0 16px 34px -24px rgba(20,30,60,.25);
-  flex:1 1 auto;
+  width:100%;
+  max-width:400px;
   min-width:0;
 }
 .current-position-photo img{
@@ -1083,10 +1103,29 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 }
 
 @media (max-width:640px){
-  .current-position-media{ flex-direction:column; align-items:stretch; gap:.9rem; }
-  .current-position-badges{ flex-direction:row; flex-wrap:wrap; justify-content:center; gap:.9rem; }
-  .current-position-badges img{ height:52px; }
-  .current-position-photo{ border-radius:10px; }
+  .current-position-media{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:1.4rem;
+  }
+
+  /* Les badges (gauche + droite confondus) passent en grille 2x2 */
+  .current-position-badges-wrap{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1.3rem;
+    justify-items:center;
+    align-items:center;
+    width:100%;
+    max-width:320px;
+  }
+  .current-position-badges-left,
+  .current-position-badges-right{ display:contents; }
+
+  .current-position-badges img{ height:80px; }
+
+  .current-position-photo{ max-width:320px; border-radius:10px; }
 }
 
 @media (max-width:760px){
