@@ -68,7 +68,7 @@ img{ max-width:100%; display:block; }
   flex-wrap:wrap; gap:.75rem;
 }
 .topbar-name{ font-family:'Outfit',sans-serif; font-weight:600; font-size:1.2rem; letter-spacing:.01em; color:#fff; }
-.topbar-nav{ display:flex; gap:1.6rem; flex-wrap:wrap; }
+.topbar-nav{ display:flex; gap:1.6rem; flex-wrap:wrap; flex:1 1 auto; min-width:0; }
 .topbar-nav a{
   display:flex; align-items:center; gap:.5rem;
   font-family:'Inter',sans-serif; font-weight:700;
@@ -88,23 +88,29 @@ img{ max-width:100%; display:block; }
 .topbar-nav .nav-icon{ display:none; width:19px; height:19px; flex-shrink:0; }
 .topbar-nav .nav-label{ display:block; }
 
-/* Conteneur qui regroupe le ruban de nav et le sélecteur de langue à droite */
-.topbar-right{ display:flex; align-items:center; gap:1.4rem; }
+/* Conteneur qui regroupe le ruban de nav et le sélecteur de langue à droite :
+   ne doit jamais passer à la ligne, quelle que soit la largeur de la fenêtre */
+.topbar-right{ display:flex; align-items:center; gap:1.2rem; flex-wrap:nowrap; flex:none; }
 
-/* Sélecteur de langue FR / EN, à droite de Contact dans le ruban */
+/* Sélecteur de langue FR / EN, à droite de Contact dans le ruban.
+   FR au-dessus de EN (plus compact que côte à côte).
+   Couleurs identiques au ruban : langue active = blanc (comme la page active),
+   langue inactive = même bleu clair que les liens non actifs. */
 .lang-switch{
-  display:flex; align-items:center; gap:.4rem;
-  font-family:'Inter',sans-serif; font-weight:700; font-size:.72rem;
-  letter-spacing:.05em;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:.18rem;
+  font-family:'Inter',sans-serif; font-weight:700; font-size:.64rem;
+  letter-spacing:.04em;
+  flex:none;
+  white-space:nowrap;
 }
 .lang-btn{
   background:none; border:none; padding:0; margin:0;
-  font:inherit; color:var(--blue-soft); cursor:pointer;
+  font:inherit; line-height:1; color:var(--blue-soft); cursor:pointer;
   transition:color .2s ease;
 }
 .lang-btn:hover{ color:#fff; }
 .lang-btn.is-active{ color:#fff; cursor:default; }
-.lang-sep{ color:var(--blue-soft); }
 
 /* Sur l'accueil, seul « Accueil » reste actif dans le ruban. */
 .home2 .topbar-nav a.is-scroll-active:not([aria-current="page"]){
@@ -424,6 +430,26 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 .profile-meta li svg{ width:18px; height:18px; flex:none; color:var(--blue); }
 .profile-meta li:first-child{ color:var(--ink); font-weight:600; }
 .profile-meta li.meta-nowrap{ align-self:center; text-align:center; white-space:nowrap; font-size:.86rem; }
+
+/* Badges de certification, sous la liste de profil (alignés avec la colonne gauche) */
+.profile-badges{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:1rem;
+  margin-top:1.8rem;
+}
+.profile-badges img{
+  height:52px;
+  width:auto;
+  object-fit:contain;
+}
+
+@media (max-width:480px){
+  .profile-badges{ gap:.8rem; margin-top:1.4rem; }
+  .profile-badges img{ height:44px; }
+}
 
 .profile-btns{ display:flex; flex-direction:column; gap:.6rem; }
 .icon-btn{
