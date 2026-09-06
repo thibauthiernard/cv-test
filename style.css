@@ -431,26 +431,6 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 .profile-meta li:first-child{ color:var(--ink); font-weight:600; }
 .profile-meta li.meta-nowrap{ align-self:center; text-align:center; white-space:nowrap; font-size:.86rem; }
 
-/* Badges de certification, sous la liste de profil (alignés avec la colonne gauche) */
-.profile-badges{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:1rem;
-  margin-top:1.8rem;
-}
-.profile-badges img{
-  height:52px;
-  width:auto;
-  object-fit:contain;
-}
-
-@media (max-width:480px){
-  .profile-badges{ gap:.8rem; margin-top:1.4rem; }
-  .profile-badges img{ height:44px; }
-}
-
 .profile-btns{ display:flex; flex-direction:column; gap:.6rem; }
 .icon-btn{
   display:flex; align-items:center; justify-content:center; gap:.55rem;
@@ -501,6 +481,28 @@ section > .eyebrow{ margin-bottom:1.1rem; }
 }
 .expertise-card h3{ font-size:1rem; font-weight:700; margin:0 0 .5rem; color:var(--ink); }
 .expertise-card p{ font-size:.83rem; color:var(--ink-soft); margin:0; line-height:1.45; }
+
+/* Badges de certification, sous les 3 cartes de compétences */
+.expertise-badges{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:1.8rem;
+  margin-top:1.8rem;
+  padding-top:1.6rem;
+  border-top:1px solid var(--line);
+}
+.expertise-badges img{
+  height:78px;
+  width:auto;
+  object-fit:contain;
+}
+
+@media (max-width:640px){
+  .expertise-badges{ gap:1.2rem; margin-top:1.3rem; padding-top:1.2rem; }
+  .expertise-badges img{ height:60px; }
+}
 
 /* Accueil responsive : la colonne profil passe au-dessus de la bio,
    le cadre "Mon expertise" et la phrase d'intro s'adaptent aux petits écrans */
