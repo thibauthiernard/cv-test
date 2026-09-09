@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }, {
     root: null,
-    rootMargin: '-45% 0px -45% 0px',
+    rootMargin: '-70% 0px -70% 0px',
     threshold: 0
   });
 
