@@ -765,29 +765,18 @@ section > .eyebrow{ margin-bottom:1.1rem; }
   object-fit:cover;
 }
 
-.realisation-card-featured .realisation-card-image::after{
+.realisation-card-featured .realisation-card-image::before{
   content:"";
   position:absolute;
   inset:0;
   background:linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0) 100%);
   z-index:1;
   pointer-events:none;
-}
-
-.realisation-card-featured .realisation-card-image::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0);
-  z-index:2;
-  pointer-events:none;
-  opacity:0;
-  transition:opacity .3s ease;
+  transition:background .3s ease;
 }
 
 .realisation-card-featured:hover .realisation-card-image::before{
-  opacity:1;
-  background:rgba(0,0,0,0.7);
+  background:rgba(0,0,0,0.8);
 }
 
 .realisation-card-featured .realisation-card-overlay{
