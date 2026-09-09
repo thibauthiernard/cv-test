@@ -734,10 +734,41 @@ section > .eyebrow{ margin-bottom:1.1rem; }
   transition:box-shadow .2s ease, border-color .2s ease;
 }
 
-.realisation-card:hover,
+/* Effets au survol : réservés aux appareils qui savent vraiment "survoler"
+   (souris). Sur tactile (iPhone/Android), :hover peut rester "collé" après
+   un tap et entrer en conflit avec la classe .is-active pilotée en JS plus
+   bas — on l'isole donc ici. */
+@media (hover:hover) and (pointer:fine){
+  .realisation-card:hover{
+    border-color:var(--blue-soft);
+    box-shadow:0 10px 26px rgba(0,0,0,.12);
+  }
+  .realisation-card:hover .realisation-card-image img{
+    transform:scale(1.04);
+  }
+  .realisation-card:hover .realisation-card-image::after{
+    opacity:1;
+  }
+  .realisation-card:hover .realisation-card-overlay{
+    opacity:1;
+    visibility:visible;
+  }
+}
+
+/* Navigation au clavier : toujours actif, quel que soit l'appareil */
 .realisation-card:focus-visible{
   border-color:var(--blue-soft);
   box-shadow:0 10px 26px rgba(0,0,0,.12);
+}
+.realisation-card:focus-visible .realisation-card-image img{
+  transform:scale(1.04);
+}
+.realisation-card:focus-visible .realisation-card-image::after{
+  opacity:1;
+}
+.realisation-card:focus-visible .realisation-card-overlay{
+  opacity:1;
+  visibility:visible;
 }
 
 .realisation-card-image{
@@ -754,11 +785,6 @@ section > .eyebrow{ margin-bottom:1.1rem; }
   height:100%;
   object-fit:cover;
   transition:transform .35s ease;
-}
-
-.realisation-card:hover .realisation-card-image img,
-.realisation-card:focus-visible .realisation-card-image img{
-  transform:scale(1.04);
 }
 
 /* Dégradé bas permanent (filtre de base, ne change jamais) */
@@ -783,11 +809,6 @@ section > .eyebrow{ margin-bottom:1.1rem; }
   opacity:0;
   pointer-events:none;
   transition:opacity .3s ease;
-}
-
-.realisation-card:hover .realisation-card-image::after,
-.realisation-card:focus-visible .realisation-card-image::after{
-  opacity:1;
 }
 
 .realisation-card-title{
@@ -831,8 +852,12 @@ section > .eyebrow{ margin-bottom:1.1rem; }
   font-weight:500;
 }
 
-.realisation-card:hover .realisation-card-overlay,
-.realisation-card:focus-visible .realisation-card-overlay{
+/* Équivalent tactile : classe togglée en JS quand la carte est centrée
+   à l'écran pendant le scroll (voir script.js) */
+.realisation-card.is-active .realisation-card-image::after{
+  opacity:1;
+}
+.realisation-card.is-active .realisation-card-overlay{
   opacity:1;
   visibility:visible;
 }
