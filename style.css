@@ -761,7 +761,7 @@ section > .eyebrow{ margin-bottom:1.1rem; }
   transform:scale(1.04);
 }
 
-/* Dégradé bas permanent, pour la lisibilité du titre au repos */
+/* Dégradé bas permanent (filtre de base, ne change jamais) */
 .realisation-card-image::before{
   content:"";
   position:absolute;
@@ -769,13 +769,25 @@ section > .eyebrow{ margin-bottom:1.1rem; }
   z-index:1;
   background:linear-gradient(to top, rgba(0,0,0,.8) 0%, rgba(0,0,0,.4) 40%, rgba(0,0,0,0) 100%);
   pointer-events:none;
-  transition:background .3s ease;
 }
 
-/* Au survol : le dégradé devient un aplat sombre uniforme sur toute l'image */
-.realisation-card:hover .realisation-card-image::before,
-.realisation-card:focus-visible .realisation-card-image::before{
+/* Voile sombre plein cadre, superposé au dégradé : on n'anime que son
+   opacité (seule façon de garantir un fondu propre — on ne peut pas
+   interpoler un dégradé et un aplat de couleur, d'où le flash précédent). */
+.realisation-card-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
   background:rgba(0,0,0,.8);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .3s ease;
+}
+
+.realisation-card:hover .realisation-card-image::after,
+.realisation-card:focus-visible .realisation-card-image::after{
+  opacity:1;
 }
 
 .realisation-card-title{
